@@ -8,10 +8,11 @@
 	pageHeader
 --------------------*/
 .pageHeader{
-	background: url(../img/common/bg_pageheader.png) right center /contain no-repeat #262626;
+	background-color: lightgray;
 	&__ttl{
 		display: flex;
-		align-items: flex-end;
+		align-items: center;
+		flex-direction: column;
 		color: #ffffff;
 		padding: 68px 40px;
 		@include mq(sp) {
@@ -19,24 +20,8 @@
 			padding: 24px 24px 20px;
 		}
 		.eng{
-			font-size: 6.4rem;
-			line-height: 1;
-			display: block;
-			@include mq(sp) {
-				font-size: 4rem;
-			}
-			&::first-letter{
-				color: $primary-color;
-			}
 		}
 		.ja{
-			font-size: 1.8rem;
-			margin-left: 12px;
-			@include mq(sp) {
-				font-size: 1.3rem;
-				margin-left: 0;
-				margin-top: 4px;
-			}
 		}
 	}
 }

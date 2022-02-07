@@ -532,21 +532,11 @@ body input[type=radio]:checked + label:after { opacity: 1; }
 /*--------------------
 	pageHeader
 --------------------*/
-.pageHeader { background: url(../img/common/bg_pageheader.png) right center/contain no-repeat #262626; }
+.pageHeader { background-color: lightgray; }
 
-.pageHeader__ttl { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; color: #ffffff; padding: 68px 40px; }
+.pageHeader__ttl { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; color: #ffffff; padding: 68px 40px; }
 
 @media screen and (max-width: 834px) { .pageHeader__ttl { display: block; padding: 24px 24px 20px; } }
-
-.pageHeader__ttl .eng { font-size: 6.4rem; line-height: 1; display: block; }
-
-@media screen and (max-width: 834px) { .pageHeader__ttl .eng { font-size: 4rem; } }
-
-.pageHeader__ttl .eng::first-letter { color: #f08a4b; }
-
-.pageHeader__ttl .ja { font-size: 1.8rem; margin-left: 12px; }
-
-@media screen and (max-width: 834px) { .pageHeader__ttl .ja { font-size: 1.3rem; margin-left: 0; margin-top: 4px; } }
 
 /*--------------------
 	breadcrumb
