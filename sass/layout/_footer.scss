@@ -1,0 +1,382 @@
+@charset "utf-8";
+
+/* ============================================
+// FOOTER
+// ==========================================*/
+
+
+/*--------------------
+	背景画像
+--------------------*/
+// 背景画像（グラデーション）
+.footer {
+	background-image: url(../img/common/bg05.png);
+	background-position: bottom left;
+	background-repeat: no-repeat;
+}
+
+/*--------------------
+	フッター
+--------------------*/
+.footer{
+
+	&__recruit {
+		background-image: url(../img/common/footer_recruit.jpg);
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		padding: 80px;
+		position: relative;
+		@include mq(pc) {
+			background-attachment: fixed;
+		}
+		@include mq(ie) {
+			background-attachment: local;
+		}
+		@include mq(tab) {
+			background-attachment: initial;
+		}
+		@include mq(sp) {
+			padding: 80px 24px;
+		}
+		@include mq(narrow) {
+			padding: 80px 16px;
+		}
+
+
+		&:before {
+			content: '';
+			background-color: rgba(0,0,0,0.5);
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+
+		&__inner {
+			position: relative;
+			z-index: 2;
+		}
+		&__copy {
+			font-size: 3.2rem;
+			font-weight: bold;
+			line-height: 1.8;
+			color: #fff;
+			text-align: center;
+			@include mq(sp) {
+				font-size: 2rem;
+			}
+			@include mq(narrow) {
+				font-size: 1.8rem;
+			}
+
+		}
+
+		.commonBtn01 {
+			margin-top: 48px;
+			@include mq(sp) {
+				margin-top: 24px;
+			}
+		}
+	}
+	&__inner{
+		padding: 60px 40px 120px;
+		position: relative;
+		&::before {
+			content: "";
+			display: inline-block;
+			background-image: url(../img/index/bg_deco06.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 369px;
+			height: 141px;
+			position: absolute;
+			bottom: 0;
+			right: 40px;
+			z-index: -1;
+			@include mq(sp) {
+				transform: scale(0.5);
+				transform-origin: right bottom;
+				right: 18px;
+				bottom: 0;
+			}
+		}
+		@include mq(sp) {
+			padding: 36px 24px 24px;
+		}
+	}
+	&__body {
+		&__inner {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			max-width: 1180px;
+			margin-top: 48px;
+			@include mq(sp) {
+				flex-direction: column;
+				margin-top: 40px;
+			}
+		}
+		&__corp {
+			flex: 0 0 27%;
+			margin-right: 3%;
+			@include mq(tab) {
+				flex: 0 0 31%;
+				margin-right: 0;
+			}
+			@include mq(sp) {
+				margin-right: 0;
+				order: 2;
+				margin-top: 32px;
+			}
+		}
+		&__links {
+			flex: 0 0 70%;
+			@include mq(tab) {
+				flex: 0 0 66%;
+				margin-right: 0;
+			}
+			@include mq(sp) {
+				order: 1;
+			}
+		}
+	}
+	&__logo{
+		img{
+			max-width: 100%;
+			width: 190px;
+			@include mq(sp) {
+				width: 140px;
+			}
+		}
+	}
+	&__address {
+		margin-top: 32px;
+		line-height: 1.2;
+		@include mq(sp) {
+			margin-top: 20px;
+		}
+		.tel-num {
+			margin-top: 12px;
+			@include mq(sp) {
+				margin-top: 8px;
+			}
+		}
+	}
+	&__corpolate {
+		@include mq(sp) {
+			width: 200px;
+		}
+	}
+	&__tel {
+		margin-top: 40px;
+		@include mq(sp) {
+			margin-top: 20px;
+		}
+		.tel-num {
+			font-family: $eng;
+			font-size: 2.8rem;
+			font-weight: bold;
+			color: $txt-color02;
+			line-height: 1;
+			@include mq(sp) {
+				font-size: 2.4rem;
+			}
+		}
+		.reception-time {
+			font-size: 1.2rem;
+			color: $txt-color02;
+			line-height: 1;
+		}
+	}
+	&__nav{
+		&__list{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			@include mq(sp) {
+				flex-wrap: wrap;
+				justify-content: flex-start;
+			}
+			&__item{
+				font-size: 1.6rem;
+				font-weight: bold;
+				@include mq(sp) {
+					font-size: 1.4rem;
+					margin-right: 1em;
+				}
+				a {
+					color: $txt-color02;
+					transition: color 0.24s;
+					@include mq(pc) {
+						&:hover {
+							color: $primary-color;
+						}
+					}
+				}
+			}
+		}
+	}
+	&__job-search {
+		margin-top: 64px;
+		background-color: #fef1e8;
+		padding: 40px;
+		padding-left: 48px;
+		width: 87%;
+		margin-right: 0;
+		margin-left: auto;
+		@include mq(sp) {
+			width: 100%;
+			margin-top: 16px;
+			padding: 20px;
+			padding-left: 28px;
+		}
+		&__list {
+			&:not(:first-child) {
+				margin-top: 16px;
+				@include mq(sp) {
+					margin-top: 6px;
+				}
+			}
+			dl {
+				font-size: 1.4rem;
+				display: flex;
+				flex-wrap: wrap;
+				width: 100%;
+				@include mq(sp) {
+					display: block;
+				}
+			}
+			dt {
+				color: $primary-color;
+				font-weight: bold;
+			}
+			dd {
+				ul {
+					display: flex;
+					flex-wrap: wrap;
+					li {
+						&:not(:last-child) {
+							margin-right: 20px;
+						}
+					}
+				}
+				@include mq(pc) {
+					width: 80%;
+				}
+			}
+		}
+	}
+	&__copyright{
+		padding: 60px 0;
+		@include mq(tab) {
+			padding: 48px 0;
+		}
+		@include mq(sp) {
+			padding: 40px 0 40px;
+			order: 2;
+		}
+		&__inner {
+			max-width: 1180px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			@include mq(sp) {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+		}
+		&__cr {
+			color: $txt-color02;
+			font-size: 1.2rem;
+		}
+		&__ga {
+			font-size: 1.2rem;
+			@include mq(tab) {
+				padding-right: 96px;
+			}
+		}
+		a {
+			color: $txt-color02;
+			text-decoration: underline;
+		}
+	}
+	&__share {
+		display: flex;
+		align-items: center;
+		margin-top: 36px;
+		@include mq(sp) {
+			margin-top: 28px;
+		}
+		.hd {
+		  font-size: 1.2rem;
+		  margin-right: 20px;
+		  color: $txt-color02;
+		  line-height: 1.58;
+		}
+		.list {
+		  display: flex;
+		  align-items: center;
+		  &__item {
+			margin-left: 8px;
+			&:first-child {
+			  margin-left: 0;
+			}
+
+			img {
+			  @include mq(sp) {
+				height: 24px;
+				margin-bottom: 4px;
+			  }
+			}
+		  }
+		}
+	}
+
+	.commonBtn02 {
+		margin-top: 32px;
+		@include mq(sp) {
+			margin-top: 24px;
+		}
+	}
+}
+
+/*--------------------
+	pagetop
+--------------------*/
+.pagetop{
+	position: fixed;
+	right: 40px;
+	bottom: 40px;
+	z-index: 20;
+	opacity: 0;
+	transition: opacity 0.48s;
+	@include mq(tab) {
+		right: 32px;
+		bottom: 32px;
+	}
+	@include mq(sp) {
+		right: 12px;
+		bottom: 12px;
+	}
+	.js-scroll &{
+		opacity: 1;
+	}
+	a {
+		display: block;
+		position: relative;
+		z-index: 1;
+		transition: opacity 0.4s;
+		@include mq(pc) {
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+	img {
+		@include mq(sp) {
+			transform: scale(0.8);
+		}
+	}
+}

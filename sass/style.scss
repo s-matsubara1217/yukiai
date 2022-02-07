@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+//foundation
+@import 'foundation/mixins';
+@import 'foundation/normalize';
+@import 'foundation/base';
+
+//object
+@import 'object/form';
+@import 'object/module';
+@import 'object/animation';
+
+//layout: ;
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/index';
+@import 'layout/form';

@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+/* ============================================
+// ANIMATION
+// ==========================================*/
+
+
+/*--------------------
+ 全ページ共通
+--------------------*/
+/* 一文字ずつ表示
+**********************************/
+.eachTextAnime span{
+	opacity: 0;
+	display: inline-block;
+}
+.eachTextAnime.appeartext span{
+    animation: text_anime_on .4s ease-out forwards;
+}
+@keyframes text_anime_on {
+	0% {
+		opacity:0;
+		transform: translateY(4px);
+	}
+	100% {
+		opacity:1;
+		transform: translateY(0);
+	}
+}
+
+
+/*--------------------
+ トップページのみ
+--------------------*/
+.front-page {
+    /* 常に
+    **********************************/
+    // 画像ズームアップ
+    @keyframes imgZoomUp {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+    }
+    .mainVisual {
+    &__slide {
+        &__list {
+            &__item {
+                &.swiper-slide-active {
+                    overflow: hidden;
+                    img {
+                        animation-name: imgZoomUp;
+                        animation-duration: 10s;
+                        animation-fill-mode: forwards;
+                        animation-delay: 1s;
+                    }
+                }
+            }
+        }
+    }
+    }
+
+    /* ロードされたら（メインビジュアルエリア）
+    **********************************/
+    // アニメーション前のスタイル
+    .mainVisual {
+        // 画像
+        &__slide {
+            opacity: 0;
+            transform: translateX(24px);
+            transition: transform 1.6s, opacity 1.6s;
+        }
+        // コピー
+        &__copy {
+            opacity: 0;
+            transform: translateX(-24px);
+            transition: transform 1.6s, opacity 1.6s;
+            transition-delay: 0.8s;
+            @include mq(sp) {
+                transform: translate(-50%,-50%);
+            }
+        }
+        // サブテキスト
+        &__sub-text {
+            opacity: 0;
+            transform: translate(24px,150%);
+            transition: transform 1.6s, opacity 1.6s;
+            transition-delay: 0.8s;
+        }
+    }
+
+    // アニメーション後のスタイル
+    .anime__mvImg {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .anime__mvCopy {
+        opacity: 1;
+        transform: translateX(0);
+        @include mq(sp) {
+            transform: translate(-50%,-50%);
+        }
+    }
+    .anime__mvSub-text {
+        opacity: 1;
+        transform: translate(0,150%);
+    }
+}
+
+
+
+/*--------------------
+ 下層ページのみ
+--------------------*/

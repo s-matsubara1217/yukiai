@@ -1,0 +1,561 @@
+@charset "utf-8";
+
+/* ============================================
+// MODULES
+// ==========================================*/
+
+/*--------------------
+	pageHeader
+--------------------*/
+.pageHeader{
+	background: url(../img/common/bg_pageheader.png) right center /contain no-repeat #262626;
+	&__ttl{
+		display: flex;
+		align-items: flex-end;
+		color: #ffffff;
+		padding: 68px 40px;
+		@include mq(sp) {
+			display: block;
+			padding: 24px 24px 20px;
+		}
+		.eng{
+			font-size: 6.4rem;
+			line-height: 1;
+			display: block;
+			@include mq(sp) {
+				font-size: 4rem;
+			}
+			&::first-letter{
+				color: $primary-color;
+			}
+		}
+		.ja{
+			font-size: 1.8rem;
+			margin-left: 12px;
+			@include mq(sp) {
+				font-size: 1.3rem;
+				margin-left: 0;
+				margin-top: 4px;
+			}
+		}
+	}
+}
+
+/*--------------------
+	breadcrumb
+--------------------*/
+.breadcrumb {
+	width: 100%;
+	position: relative;
+	margin-bottom: 0;
+	z-index: 3;
+	&__list{
+		position: relative;
+		overflow: auto;
+		white-space: nowrap;
+		box-sizing: border-box;
+		padding: 8px 116px;
+		text-align: right;
+		@include mq(sp) {
+			padding: 8px 16px;
+		}
+		&__item{
+			display: inline;
+			font-size: 1.4rem;
+			font-weight: normal;
+			color: rgba(#666666, 0.3);
+			@include mq(sp) {
+				font-size: 1.2rem;
+			}
+			&:not(:last-child):after {
+				content: "＞";
+				display: inline-block;
+				font-size: 1.2rem;
+				margin-left: 7px;
+				margin-right: 7px;
+			}
+			a{
+				display: inline-block;
+				position: relative;
+				transition: .3s;
+				color: rgba(#666666, 0.3);
+				@include mq(pc) {
+					&:hover{
+						color: $primary-color;
+					}
+				}
+			}
+		}
+		&::-webkit-scrollbar {
+			height: 1px;
+			cursor: pointer;
+		}
+		&::-webkit-scrollbar-track {
+			background: #e5e5e5;
+		}
+		&::-webkit-scrollbar-thumb {
+			background: $primary-color;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+	}
+}
+
+/*--------------------
+	commonTitle
+--------------------*/
+.commonTitle01{
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	flex-wrap: wrap;
+
+	.eng {
+		font-size: 3.6rem;
+		font-weight: bold;
+		letter-spacing: 0.075em;
+		color: $txt-color02;
+		line-height: 1;
+		margin-right: 16px;
+		@include mq(sp) {
+			font-size: 2.8rem;
+			margin-right: 10px;
+		}
+	}
+	.ja {
+		font-size: 1.6rem;
+		font-weight: bold;
+		color: #ffc198;
+		line-height: 1;
+		margin-top: 8px;
+		margin-bottom: 4px;
+		@include mq(sp) {
+			font-size: 1.4rem;
+			margin-bottom: 2px;
+		}
+	}
+}
+
+/*--------------------
+	commonNavItem
+--------------------*/
+.commonNavItem {
+	a {
+		display: block;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-direction: column;
+		position: relative;
+
+		@include mq(pc) {
+			&:hover {
+				.decoLeaf {
+					&:before {
+						opacity: 1;
+					}
+					&:after {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	  }
+	  .ja {
+		font-size: 1.6rem;
+		font-weight: bold;
+		color: $txt-color02;
+		transition: color 0.24s;
+		@include mq(sp) {
+			font-size: 1.5rem;
+		}
+	  }
+	  .eng {
+		font-size: 1.2rem;
+		color: $primary-color;
+		font-weight: bold;
+	  }
+}
+
+/*--------------------
+	commonBtn
+--------------------*/
+.commonBtn01{
+	max-width: 340px;
+	margin: 0 auto;
+	@include mq(sp) {
+		max-width: 200px;
+	}
+	a {
+		border-radius: 100px;
+		display: block;
+		text-align: center;
+		font-size: 1.6rem;
+		color: #ffffff;
+
+
+		@include mq(sp) {
+			font-size: 1.5rem;
+		}
+
+		span {
+			position: relative;
+			padding-left: 16px;
+			font-weight: bold;
+			&::before {
+				content: '';
+				display: inline-block;
+				background-image: url(../img/common/ico_search_white.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+				width: 16px;
+				height: 16px;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translate(-50%,-50%);
+			}
+		}
+
+	}
+
+	&.-orange {
+		a {
+			background: $primary-color;
+			transition: background 0.4s;
+			@include mq(pc) {
+				&:hover {
+					background-color: darken($primary-color,10%);
+				}
+			}
+		}
+	}
+	&.-vertical {
+		a {
+			padding: 24px 57px;
+		}
+	}
+	&.-wide {
+		a {
+			padding: 20px;
+			@include mq(sp) {
+				padding: 12px;
+			}
+		}
+	}
+	&.-small {
+		width: 240px;
+		a {
+			padding: 18px 40px;
+		}
+	}
+}
+.commonBtn02 {
+	max-width: 240px;
+	@include mq(sp) {
+		width: 180px;
+	}
+	a {
+		display: block;
+		padding: 14px 28px;
+		border: 1px solid #4f4844;
+		position: relative;
+		font-weight: bold;
+		color: #4f4844;
+		@include mq(pc) {
+			&:hover {
+				color: $primary-color;
+				&:before {
+					transform: translate(0);
+				}
+			}
+		}
+		@include mq(sp) {
+			padding: 10px 24px;
+			font-size: 1.3rem;
+		}
+		@include mq(narrow) {
+			padding: 10px 16px;
+			font-size: 1.2rem;
+		}
+
+		&:before {
+			content: '';
+			display: inline-block;
+			background-color: #fff;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			transform: translate(7px,7px);
+			transition: transform 0.4s;
+			@include mq(sp) {
+				transform: translate(5px,5px);
+			}
+		}
+	}
+
+	&.-pink {
+		a {
+			&:before {
+				background-color: $bg-color;
+			}
+		}
+	}
+}
+
+/*--------------------
+	commonArrow
+--------------------*/
+.commonArrow01 {
+	position: relative;
+	@include mq(pc) {
+		&:hover {
+			&:after {
+				transform: translate(4px,-50%);
+			}
+		}
+	}
+	&:after {
+		content: '';
+		display: inline-block;
+		background-image: url(../img/common/ico_arrow_orange.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 16px;
+		height: 16px;
+		position: absolute;
+		top: 50%;
+		right: 28px;
+		transform: translateY(-50%);
+		transition: transform 0.4s;
+		@include mq(sp) {
+			right: 16px;
+		}
+	}
+}
+
+/*--------------------
+	commonBudge
+--------------------*/
+.commonBudge {
+	font-size: 1.2rem;
+	color: #fff;
+	padding: 2px 8px;
+	@include mq(narrow) {
+		font-size: 1.1rem;
+	}
+
+	&.-blue {
+		background-color: $light-blue;
+	}
+	&.-green {
+		background-color: $light-green;
+	}
+}
+
+/*--------------------
+	job_count_pager
+--------------------*/
+body{
+	.job_count_pager {
+		display: flex;
+	}
+	.job_count_pager.contents_top {
+		-webkit-justify-content: space-between;
+		justify-content: space-between;
+		-webkit-align-items: center;
+		align-items: center;
+		margin-bottom: 30px;
+	}
+	.job_count_pager.contents_bottom{
+		display: block;
+		margin: 80px 0;
+		padding: 0 0 0;
+		@include mq(sp) {
+			margin: 40px 0;
+		}
+		.pagination{
+			padding-top: 30px;
+			@include mq(sp) {
+				padding-top: 12px;
+			}
+			ul{
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
+				justify-content: center;
+				li{
+					text-align: center;
+					font-size: 1.8rem;
+					a,em{
+						display: block;
+						width: 52px;
+						height: 52px;
+						line-height: 52px;
+						font-weight: bold;
+						font-style: normal;
+						overflow: hidden;
+						margin: 0 4px;
+						border: 1px solid $primary-color;
+						color: $primary-color;
+						transition: all 0.24s;
+						@include mq(sp) {
+							width: 32px;
+							height: 32px;
+							line-height: 32px;
+							font-size: 1.4rem;
+						}
+					}
+					a:hover,
+					em{
+						color: #ffffff;
+						background: $primary-color;
+						opacity: 1;
+					}
+				}
+				.number.current{
+					display: inline-block;
+				}
+			}
+			.prev {
+				position: relative;
+				a {
+					&:after {
+						content: '';
+						width: 0;
+						height: 0;
+						border-style: solid;
+						border-width: 8px 8px 8px 0;
+						border-color: transparent $primary-color transparent transparent;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%,-50%);
+						@include mq(sp) {
+							border-width: 5px 5px 5px 0;
+						}
+					}
+					@include mq(pc) {
+						&:hover {
+							&::after {
+								transition: all .24s;
+								border-color: transparent #fff transparent transparent;
+							}
+						}
+					}
+				}
+			}
+			.next {
+				position: relative;
+				a {
+					&:after {
+						content: '';
+						width: 0;
+						height: 0;
+						border-style: solid;
+						border-width: 8px 0 8px 8px;
+						border-color: transparent transparent transparent $primary-color;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%,-50%);
+						@include mq(sp) {
+							border-width: 5px 0 5px 5px;
+						}
+						@include mq(pc) {
+							&:hover {
+								&::after {
+									transition: all .24s;
+									border-color: transparent transparent transparent #fff;
+								}
+							}
+						}
+					}
+					@include mq(pc) {
+						&:hover {
+							&::after {
+								transition: all .24s;
+								border-color: transparent transparent transparent #fff;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/*--------------------
+	decoLeaf
+--------------------*/
+.decoLeaf {
+	position: relative;
+	padding-left: 56px;
+	@include mq(sp) {
+		padding-left: 44px;
+	}
+	&:before {
+		content: '';
+		display: inline-block;
+		width: 32px;
+		height: 24px;
+		background-color: $primary-color;
+		border-radius: 24px 0 24px 0;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		z-index: 2;
+		@include mq(sp) {
+			transform: translateY(-50%) scale(0.7);
+		}
+	}
+	&:after {
+		content: '';
+		display: inline-block;
+		width: 32px;
+		height: 24px;
+		background-color: #dcdada;
+		border-radius: 24px 0 24px 0;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(25%,-25%);
+		@include mq(sp) {
+			transform: translate(15%,-35%) scale(0.7);
+		}
+	}
+
+	&.-top {
+		padding-left: 0;
+		padding-top: 12px;
+		&:before {
+			top: 0;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			opacity: 0;
+			transition: opacity 0.4s;
+		}
+		&:after {
+			top: 0;
+			left: 50%;
+			transform: translate(-25%,-25%);
+			opacity: 0;
+			transition: opacity 0.4s;
+		}
+	}
+	&.-small {
+		&:before,
+		&:after {
+			width: 14px;
+			height: 10px;
+			border-radius: 10px 0 10px 0;
+		}
+	}
+}

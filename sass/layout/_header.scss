@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+/* ============================================
+// HEADER
+// ==========================================*/
+
+/*--------------------
+ ヘッダー
+--------------------*/
+.header{
+	position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+
+  &__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 38px 56px;
+    padding-right: 38px;
+		@include mq(sp) {
+      padding: 16px 20px;
+    }
+  }
+  &__logo{
+    a{
+      display: block;
+    }
+    img{
+      display: block;
+      @include mq(sp) {
+        width: 140px;
+      }
+    }
+  }
+  &__nav{
+    margin-left: auto;
+    @media screen and (max-width: 1280px){
+      display: none;
+    }
+    &__list{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      &__item{
+        line-height: 1.66;
+        padding: 0 26px;
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+  &__hamburger{
+    display: none;
+    margin-left: 40px;
+    padding: 5px 0 5px 40px;
+    border-left: 1px solid $border-color;
+    @media screen and (max-width: 1280px){
+      display: block;
+    }
+		@include mq(sp) {
+      margin-left: 20px;
+      padding: 0 0 0 20px;
+    }
+    &__inner{
+      cursor: pointer;
+      & > span{
+        display: block;
+        width: 24px;
+        height: 1px;
+        margin: 8px 0;
+        background: $txt-color01;
+        @include mq(sp) {
+          width: 18px;
+          margin: 6px 0;
+        }
+      }
+    }
+  }
+}

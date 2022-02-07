@@ -1,0 +1,235 @@
+@charset "utf-8";
+
+/* ============================================
+// 求人フォーム
+// ==========================================*/
+.custom-form {
+    .custom-form_inner {
+        margin-top: 36px;
+        @include mq(sp) {
+            margin-top: 16px;
+        }
+    }
+    .parts_ttl {
+        margin-bottom: -8px;
+        color: $primary-color;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+    .custom-form_search_btn {
+        input[type="submit"] {
+            width: 210px;
+            margin: 50px auto 0;
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: bold;
+            border-radius: 5rem;
+            @include mq(sp) {
+                margin: 24px auto 0;
+            }
+        }
+    }
+    .form_parts_inner {
+        flex: 1 1 auto;
+        padding-bottom: 20px;
+        @include mq(sp) {
+            padding: 0 0 12px;
+        }
+    }
+    .category_list {
+        display: flex;
+        flex-wrap: wrap;
+        // IEのみ
+        @media all and (-ms-high-contrast: none) {
+            max-width: 740px;
+          }
+        li {
+            margin-top: 10px;
+            @include mq(sp) {
+                margin-top: 6px;
+            }
+
+
+            &:not(:last-child) {
+                margin-right: 10px;
+                @include mq(sp) {
+                    margin-right: 6px;
+                }
+            }
+
+
+        }
+    }
+    select, option,
+    .searchWord {
+        box-shadow: none;
+        background-color: #eeeeee;
+        @include mq(sp) {
+            font-size: 1.4rem !important;
+        }
+    }
+    .pull-down,
+    .searchWord {
+        margin-top: 10px;
+        @include mq(sp) {
+            margin-top: 6px;
+        }
+    }
+    .pull-down {
+        position: relative;
+        &::after {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border: 0px;
+            border-top: 2px solid $primary-color;
+            border-right: 2px solid $primary-color;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%) rotate(135deg);
+            pointer-events: none;
+        }
+    }
+    .btn_cover {
+
+    }
+
+    // チェックボックス
+    input[type=checkbox] {
+        + label {
+            display: block;
+            padding: 10px 20px;
+            padding-left: 38px;
+            font-size: 1.4rem;
+            background-color: #ebe7e5;
+            @include mq(sp) {
+                padding: 6px 10px;
+                padding-left: 30px;
+                margin-top: 6px;
+            }
+            transition: background 0.3s, border 0.3s;
+            a:link,a:visited {
+                color: #4f4844;
+                transition: all 0.3s;
+                @include mq(pc) {
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+            &:before {
+                background-color: #fff;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 13px;
+                height: 13px;
+                left: 18px;
+                @include mq(sp) {
+                    left: 8px;
+                }
+            }
+            &:after {
+                top: 15px;
+                left: 22px;
+                width: 3px;
+                height: 7px;
+                @include mq(sp) {
+                    top: 12px;
+                    left: 12px;
+                }
+            }
+        }
+
+        &:checked {
+            + label {
+                background-color: #fff;
+                border: 1px solid $yellow;
+                &:before {
+                    background-color: $yellow;
+                }
+                &:after {
+                    top: 15px;
+                    left: 22px;
+                    width: 3px;
+                    height: 7px;
+                    @include mq(sp) {
+                        top: 12px;
+                        left: 12px;
+                    }
+                }
+            }
+        }
+    }
+    // フリーワード
+    .-freeWord {
+        .form_parts_inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 8px;
+            @include mq(sp) {
+                display: block;
+            }
+            .searchWord {
+                flex: 0 0 66%;
+                margin-top: 0;
+                background-color: #fff;
+                border: 1px solid $border-color;
+                font-size: 1.4rem;
+
+                &::placeholder {
+                    color: #bfbfbf;
+                }
+            }
+            .custom-form_searth_btn {
+                flex: 0 0 26%;
+                .btn_cover {
+                    position: relative;
+                    display: block;
+                    @include mq(pc) {
+                        &:hover {
+                            input {
+                                background-color: darken($primary-color,10%);
+                            }
+                        }
+                    }
+                    &::before {
+                        content: '';
+                        display: inline-block;
+                        width: 15px;
+                        height: 15px;
+                        background-image: url(../img/common/ico_search_white.png);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        position: absolute;
+                        top: 50%;
+                        left: 36px;
+                        transform: translateY(-50%);
+                        pointer-events: none;
+                        @include mq(tab) {
+                            left: 22px;
+                        }
+                        @include mq(sp) {
+                            left: 108px;
+                        }
+                        @include mq(narrow) {
+                            left: 88px;
+                        }
+                    }
+                    input {
+                        background-color: $primary-color;
+                        color: #fff;
+                        font-weight: bold;
+                        border-radius: 100px;
+                        padding-left: 40px !important;
+                        @include mq(sp) {
+                            width: 180px;
+                            margin: 24px auto 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
