@@ -62,7 +62,7 @@
     }
     }
 
-    /* ロードされたら（メインビジュアルエリア）
+    /* ロードされたら（ファーストビュー）
     **********************************/
     // アニメーション前のスタイル
     .mainVisual {
@@ -89,6 +89,17 @@
             transition: transform 1.6s, opacity 1.6s;
             transition-delay: 0.8s;
         }
+        // ページネーション
+        &__swiper-pagination {
+            opacity: 0;
+            transition: opacity 1.6s;
+        }
+    }
+    .main {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 1.6s, transform 1.6s;
+        transition-delay: 0.8s;
     }
 
     // アニメーション後のスタイル
@@ -106,6 +117,10 @@
     .anime__mvSub-text {
         opacity: 1;
         transform: translate(0,150%);
+    }
+    .anime__main {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 

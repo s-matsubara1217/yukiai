@@ -628,6 +628,11 @@
 				&.-next {
 					right: 0;
 				}
+				img {
+					@include mq(sp) {
+						height: 48px;
+					}
+				}
 			}
 		}
 	}
@@ -733,6 +738,11 @@
 			.commonBtn02 {
 				flex: 0 0 42%;
 				margin-right: 7px;
+			}
+		}
+		&__img-holder {
+			.img {
+				@include keepAspect(70.7%);
 			}
 		}
 	}

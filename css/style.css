@@ -725,7 +725,7 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 /*--------------------
  トップページのみ
 --------------------*/
-.front-page { /* 常に */ /* ロードされたら（メインビジュアルエリア） */ }
+.front-page { /* 常に */ /* ロードされたら（ファーストビュー） */ }
 
 @-webkit-keyframes imgZoomUp { 0% { -webkit-transform: scale(1); transform: scale(1); }
   100% { -webkit-transform: scale(1.05); transform: scale(1.05); } }
@@ -745,6 +745,10 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 .front-page .mainVisual__sub-text { opacity: 0; -webkit-transform: translate(24px, 150%); transform: translate(24px, 150%); -webkit-transition: opacity 1.6s, -webkit-transform 1.6s; transition: opacity 1.6s, -webkit-transform 1.6s; transition: transform 1.6s, opacity 1.6s; transition: transform 1.6s, opacity 1.6s, -webkit-transform 1.6s; -webkit-transition-delay: 0.8s; transition-delay: 0.8s; }
 
+.front-page .mainVisual__swiper-pagination { opacity: 0; -webkit-transition: opacity 1.6s; transition: opacity 1.6s; }
+
+.front-page .main { opacity: 0; -webkit-transform: translateY(24px); transform: translateY(24px); -webkit-transition: opacity 1.6s, -webkit-transform 1.6s; transition: opacity 1.6s, -webkit-transform 1.6s; transition: opacity 1.6s, transform 1.6s; transition: opacity 1.6s, transform 1.6s, -webkit-transform 1.6s; -webkit-transition-delay: 0.8s; transition-delay: 0.8s; }
+
 .front-page .anime__mvImg { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
 
 .front-page .anime__mvCopy { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
@@ -752,6 +756,8 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 @media screen and (max-width: 834px) { .front-page .anime__mvCopy { -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); } }
 
 .front-page .anime__mvSub-text { opacity: 1; -webkit-transform: translate(0, 150%); transform: translate(0, 150%); }
+
+.front-page .anime__main { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
 
 /*--------------------
  下層ページのみ
@@ -887,7 +893,7 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 .footer__nav__list__item { font-size: 1.6rem; font-weight: bold; }
 
-@media screen and (max-width: 834px) { .footer__nav__list__item { font-size: 1.4rem; margin-right: 1em; } }
+@media screen and (max-width: 834px) { .footer__nav__list__item { font-size: 1.4rem; margin-right: 1em; padding: 2px 0; } }
 
 .footer__nav__list__item a { color: #595652; -webkit-transition: color 0.24s; transition: color 0.24s; }
 
@@ -1201,6 +1207,8 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 .front-page .sec__facility .facility__controls__item.-next { right: 0; }
 
+@media screen and (max-width: 834px) { .front-page .sec__facility .facility__controls__item img { height: 48px; } }
+
 .front-page .sec__interview { position: relative; z-index: 4; }
 
 .front-page .sec__interview .interview__inner { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
@@ -1250,6 +1258,12 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 @media screen and (max-width: 834px) { .front-page .sec__others .others__txt-holder .commonTitle01 { -webkit-box-flex: 0; -ms-flex: 0 0 50%; flex: 0 0 50%; } }
 
 .front-page .sec__others .others__txt-holder .commonBtn02 { -webkit-box-flex: 0; -ms-flex: 0 0 42%; flex: 0 0 42%; margin-right: 7px; }
+
+.front-page .sec__others .others__img-holder .img { position: relative; z-index: 1; }
+
+.front-page .sec__others .others__img-holder .img:before { content: ''; display: block; padding-top: 70.7%; }
+
+.front-page .sec__others .others__img-holder .img img { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
 
 .front-page .sec__faq { -webkit-box-flex: 0; -ms-flex: 0 0 47%; flex: 0 0 47%; margin-top: 100px; }
 

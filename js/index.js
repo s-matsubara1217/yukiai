@@ -95,6 +95,8 @@ if (splash_text != myYear + myMonth + myDate) {//cookieデータとアクセス�
 			$('.mainVisual__slide').addClass('anime__mvImg');
 			$('.mainVisual__copy').addClass('anime__mvCopy');
 			$('.mainVisual__sub-text').addClass('anime__mvSub-text');
+			$('.mainVisual__swiper-pagination').addClass('anime__mvImg');
+			$('.main').addClass('anime__main');
 			/* ここにローディングが終わった後に動かしたい処理を書く */
 
         });
@@ -109,6 +111,8 @@ if (splash_text != myYear + myMonth + myDate) {//cookieデータとアクセス�
 		$('.mainVisual__slide').addClass('anime__mvImg');
 		$('.mainVisual__copy').addClass('anime__mvCopy');
 		$('.mainVisual__sub-text').addClass('anime__mvSub-text');
+		$('.mainVisual__swiper-pagination').addClass('anime__mvImg');
+		$('.main').addClass('anime__main');
 		/* ここに動かしたい処理を書く */
 	});
 }
