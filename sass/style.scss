@@ -4,13 +4,15 @@
 @import 'foundation/mixins';
 @import 'foundation/normalize';
 @import 'foundation/base';
+@import 'foundation/animation';
+@import 'foundation/form';
 
 //object
-@import 'object/form';
 @import 'object/module';
-@import 'object/animation';
+@import 'object/utility';
+@import 'object/component/background';
 
-//layout: ;
+//layout
 @import 'layout/header';
 @import 'layout/footer';
 @import 'layout/index';

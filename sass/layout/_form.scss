@@ -1,8 +1,9 @@
 @charset "utf-8";
 
 /* ============================================
-// 求人フォーム
+// 求人フォーム 追加分
 // ==========================================*/
+
 .custom-form {
     .custom-form_inner {
         margin-top: 36px;
@@ -144,7 +145,6 @@
         &:checked {
             + label {
                 background-color: #fff;
-                border: 1px solid $yellow;
                 &:before {
                     background-color: $yellow;
                 }
@@ -157,6 +157,15 @@
                         top: 12px;
                         left: 12px;
                     }
+                }
+
+                .border-yellow {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    border: 1px solid $yellow;
                 }
             }
         }

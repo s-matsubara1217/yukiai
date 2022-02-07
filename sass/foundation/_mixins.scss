@@ -30,7 +30,7 @@ $font-awesome-brands: 'Font Awesome 5 Brands';
 //break-points
 $breakpoints: (
   'pc': 'screen and (min-width: 835px)',
-  'tab':'screen and (min-width:768px) and (max-width:1024px)',
+  'tab':'screen and (min-width:768px) and (max-width:1180px)',
   'sp': 'screen and (max-width: 834px)',
   'narrow': 'screen and (max-width: 320px)',
   "ie": "all and (-ms-high-contrast: none)",

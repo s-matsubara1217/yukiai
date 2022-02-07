@@ -27,31 +27,12 @@
 		background-repeat: no-repeat;
 		padding: 80px;
 		position: relative;
-		@include mq(pc) {
-			background-attachment: fixed;
-		}
-		@include mq(ie) {
-			background-attachment: local;
-		}
-		@include mq(tab) {
-			background-attachment: initial;
-		}
+
 		@include mq(sp) {
 			padding: 80px 24px;
 		}
 		@include mq(narrow) {
 			padding: 80px 16px;
-		}
-
-
-		&:before {
-			content: '';
-			background-color: rgba(0,0,0,0.5);
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
 		}
 
 		&__inner {
@@ -171,8 +152,27 @@
 	}
 	&__tel {
 		margin-top: 40px;
+		position: relative;
+		padding-left: 48px;
+		&::before {
+			content: '';
+			display: inline-block;
+			background-image: url(../img/common/ico_tel.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+			width: 35px;
+			height: 33px;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			@include mq(sp) {
+				transform: translateY(-50%) scale(0.8);
+			}
+		}
 		@include mq(sp) {
 			margin-top: 20px;
+			padding-left: 40px;
 		}
 		.tel-num {
 			font-family: $eng;

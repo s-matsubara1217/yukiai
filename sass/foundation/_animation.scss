@@ -8,25 +8,6 @@
 /*--------------------
  全ページ共通
 --------------------*/
-/* 一文字ずつ表示
-**********************************/
-.eachTextAnime span{
-	opacity: 0;
-	display: inline-block;
-}
-.eachTextAnime.appeartext span{
-    animation: text_anime_on .4s ease-out forwards;
-}
-@keyframes text_anime_on {
-	0% {
-		opacity:0;
-		transform: translateY(4px);
-	}
-	100% {
-		opacity:1;
-		transform: translateY(0);
-	}
-}
 
 
 /*--------------------
@@ -78,9 +59,6 @@
             transform: translateX(-24px);
             transition: transform 1.6s, opacity 1.6s;
             transition-delay: 0.8s;
-            @include mq(sp) {
-                transform: translate(-50%,-50%);
-            }
         }
         // サブテキスト
         &__sub-text {
@@ -110,9 +88,6 @@
     .anime__mvCopy {
         opacity: 1;
         transform: translateX(0);
-        @include mq(sp) {
-            transform: translate(-50%,-50%);
-        }
     }
     .anime__mvSub-text {
         opacity: 1;
@@ -123,7 +98,6 @@
         transform: translateY(0);
     }
 }
-
 
 
 /*--------------------

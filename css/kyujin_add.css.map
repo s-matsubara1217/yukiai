@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": ";AAEA;;+CAE+C;AAE/C;;sBAEsB;AAEtB;;sBAEsB;AAKtB;;sBAEsB;AAKtB;;sBAEsB",
+    "sources": [
+        "../sass/kyujin_add.scss"
+    ],
+    "names": [],
+    "file": "kyujin_add.css"
+}

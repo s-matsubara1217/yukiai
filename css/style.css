@@ -132,7 +132,7 @@ td, th { padding: 0; }
 // ==========================================*/
 #container { padding-top: 150px; background-color: #fef9f6; }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) { #container { padding-top: 145px; } }
+@media screen and (min-width: 768px) and (max-width: 1180px) { #container { padding-top: 145px; } }
 
 @media screen and (max-width: 834px) { #container { padding-top: 83px; } }
 
@@ -363,6 +363,48 @@ a { color: #4f4844; -webkit-transition: opacity 0.24s, color 0.24s; transition: 
 
 @media screen and (max-width: 834px) { .pcOnly { display: none; } }
 
+/* ============================================
+// ANIMATION
+// ==========================================*/
+/*--------------------
+ 全ページ共通
+--------------------*/
+/*--------------------
+ トップページのみ
+--------------------*/
+.front-page { /* 常に */ /* ロードされたら（ファーストビュー） */ }
+
+@-webkit-keyframes imgZoomUp { 0% { -webkit-transform: scale(1); transform: scale(1); }
+  100% { -webkit-transform: scale(1.05); transform: scale(1.05); } }
+
+@keyframes imgZoomUp { 0% { -webkit-transform: scale(1); transform: scale(1); }
+  100% { -webkit-transform: scale(1.05); transform: scale(1.05); } }
+
+.front-page .mainVisual__slide__list__item.swiper-slide-active { overflow: hidden; }
+
+.front-page .mainVisual__slide__list__item.swiper-slide-active img { -webkit-animation-name: imgZoomUp; animation-name: imgZoomUp; -webkit-animation-duration: 10s; animation-duration: 10s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards; -webkit-animation-delay: 1s; animation-delay: 1s; }
+
+.front-page .mainVisual__slide { opacity: 0; -webkit-transform: translateX(24px); transform: translateX(24px); -webkit-transition: opacity 1.6s, -webkit-transform 1.6s; transition: opacity 1.6s, -webkit-transform 1.6s; transition: transform 1.6s, opacity 1.6s; transition: transform 1.6s, opacity 1.6s, -webkit-transform 1.6s; }
+
+.front-page .mainVisual__copy { opacity: 0; -webkit-transform: translateX(-24px); transform: translateX(-24px); -webkit-transition: opacity 1.6s, -webkit-transform 1.6s; transition: opacity 1.6s, -webkit-transform 1.6s; transition: transform 1.6s, opacity 1.6s; transition: transform 1.6s, opacity 1.6s, -webkit-transform 1.6s; -webkit-transition-delay: 0.8s; transition-delay: 0.8s; }
+
+.front-page .mainVisual__sub-text { opacity: 0; -webkit-transform: translate(24px, 150%); transform: translate(24px, 150%); -webkit-transition: opacity 1.6s, -webkit-transform 1.6s; transition: opacity 1.6s, -webkit-transform 1.6s; transition: transform 1.6s, opacity 1.6s; transition: transform 1.6s, opacity 1.6s, -webkit-transform 1.6s; -webkit-transition-delay: 0.8s; transition-delay: 0.8s; }
+
+.front-page .mainVisual__swiper-pagination { opacity: 0; -webkit-transition: opacity 1.6s; transition: opacity 1.6s; }
+
+.front-page .main { opacity: 0; -webkit-transform: translateY(24px); transform: translateY(24px); -webkit-transition: opacity 1.6s, -webkit-transform 1.6s; transition: opacity 1.6s, -webkit-transform 1.6s; transition: opacity 1.6s, transform 1.6s; transition: opacity 1.6s, transform 1.6s, -webkit-transform 1.6s; -webkit-transition-delay: 0.8s; transition-delay: 0.8s; }
+
+.front-page .anime__mvImg { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
+
+.front-page .anime__mvCopy { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
+
+.front-page .anime__mvSub-text { opacity: 1; -webkit-transform: translate(0, 150%); transform: translate(0, 150%); }
+
+.front-page .anime__main { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+
+/*--------------------
+ 下層ページのみ
+--------------------*/
 /*------------------------------
 form base setting
 ------------------------------*/
@@ -629,51 +671,6 @@ body input[type=radio]:checked + label:after { opacity: 1; }
 .commonBudge.-green { background-color: #85b26f; }
 
 /*--------------------
-	job_count_pager
---------------------*/
-body .job_count_pager { display: -webkit-box; display: -ms-flexbox; display: flex; }
-
-body .job_count_pager.contents_top { -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; margin-bottom: 30px; }
-
-body .job_count_pager.contents_bottom { display: block; margin: 80px 0; padding: 0 0 0; }
-
-@media screen and (max-width: 834px) { body .job_count_pager.contents_bottom { margin: 40px 0; } }
-
-body .job_count_pager.contents_bottom .pagination { padding-top: 30px; }
-
-@media screen and (max-width: 834px) { body .job_count_pager.contents_bottom .pagination { padding-top: 12px; } }
-
-body .job_count_pager.contents_bottom .pagination ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
-
-body .job_count_pager.contents_bottom .pagination ul li { text-align: center; font-size: 1.8rem; }
-
-body .job_count_pager.contents_bottom .pagination ul li a, body .job_count_pager.contents_bottom .pagination ul li em { display: block; width: 52px; height: 52px; line-height: 52px; font-weight: bold; font-style: normal; overflow: hidden; margin: 0 4px; border: 1px solid #f08a4b; color: #f08a4b; -webkit-transition: all 0.24s; transition: all 0.24s; }
-
-@media screen and (max-width: 834px) { body .job_count_pager.contents_bottom .pagination ul li a, body .job_count_pager.contents_bottom .pagination ul li em { width: 32px; height: 32px; line-height: 32px; font-size: 1.4rem; } }
-
-body .job_count_pager.contents_bottom .pagination ul li a:hover, body .job_count_pager.contents_bottom .pagination ul li em { color: #ffffff; background: #f08a4b; opacity: 1; }
-
-body .job_count_pager.contents_bottom .pagination ul .number.current { display: inline-block; }
-
-body .job_count_pager.contents_bottom .pagination .prev { position: relative; }
-
-body .job_count_pager.contents_bottom .pagination .prev a:after { content: ''; width: 0; height: 0; border-style: solid; border-width: 8px 8px 8px 0; border-color: transparent #f08a4b transparent transparent; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
-
-@media screen and (max-width: 834px) { body .job_count_pager.contents_bottom .pagination .prev a:after { border-width: 5px 5px 5px 0; } }
-
-@media screen and (min-width: 835px) { body .job_count_pager.contents_bottom .pagination .prev a:hover::after { -webkit-transition: all .24s; transition: all .24s; border-color: transparent #fff transparent transparent; } }
-
-body .job_count_pager.contents_bottom .pagination .next { position: relative; }
-
-body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; width: 0; height: 0; border-style: solid; border-width: 8px 0 8px 8px; border-color: transparent transparent transparent #f08a4b; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
-
-@media screen and (max-width: 834px) { body .job_count_pager.contents_bottom .pagination .next a:after { border-width: 5px 0 5px 5px; } }
-
-@media screen and (min-width: 835px) { body .job_count_pager.contents_bottom .pagination .next a:after:hover::after { -webkit-transition: all .24s; transition: all .24s; border-color: transparent transparent transparent #fff; } }
-
-@media screen and (min-width: 835px) { body .job_count_pager.contents_bottom .pagination .next a:hover::after { -webkit-transition: all .24s; transition: all .24s; border-color: transparent transparent transparent #fff; } }
-
-/*--------------------
 	decoLeaf
 --------------------*/
 .decoLeaf { position: relative; padding-left: 56px; }
@@ -697,71 +694,29 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 .decoLeaf.-small:before, .decoLeaf.-small:after { width: 14px; height: 10px; border-radius: 10px 0 10px 0; }
 
 /* ============================================
-// ANIMATION
+// UTILITY
 // ==========================================*/
-/*--------------------
- 全ページ共通
---------------------*/
-/* 一文字ずつ表示
-**********************************/
-.eachTextAnime span { opacity: 0; display: inline-block; }
+/*------------------------------
+ 表示 / 非表示
+------------------------------*/
+@media screen and (max-width: 834px) { .u-pcOnly { display: none; } }
 
-.eachTextAnime.appeartext span { -webkit-animation: text_anime_on .4s ease-out forwards; animation: text_anime_on .4s ease-out forwards; }
+@media screen and (min-width: 835px) { .u-spOnly { display: none; } }
 
-@-webkit-keyframes text_anime_on { 0% { opacity: 0;
-    -webkit-transform: translateY(4px);
-            transform: translateY(4px); }
-  100% { opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0); } }
+.c-background--mask::before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: rgba(0, 0, 0, 0.5); }
 
-@keyframes text_anime_on { 0% { opacity: 0;
-    -webkit-transform: translateY(4px);
-            transform: translateY(4px); }
-  100% { opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0); } }
+@media screen and (min-width: 835px) { .c-background--fixed { background-attachment: fixed; } }
 
-/*--------------------
- トップページのみ
---------------------*/
-.front-page { /* 常に */ /* ロードされたら（ファーストビュー） */ }
+@media all and (-ms-high-contrast: none) { .c-background--fixed { background-attachment: local; } }
 
-@-webkit-keyframes imgZoomUp { 0% { -webkit-transform: scale(1); transform: scale(1); }
-  100% { -webkit-transform: scale(1.05); transform: scale(1.05); } }
+@media screen and (min-width: 768px) and (max-width: 1180px) { .c-background--fixed { background-attachment: initial; } }
 
-@keyframes imgZoomUp { 0% { -webkit-transform: scale(1); transform: scale(1); }
-  100% { -webkit-transform: scale(1.05); transform: scale(1.05); } }
+.c-background--window-full { margin: 0 calc(50% - 50vw); padding: 0 calc(50vw - 50%); overflow: hidden; width: 100vw; }
 
-.front-page .mainVisual__slide__list__item.swiper-slide-active { overflow: hidden; }
+.c-background--window-right { margin: 0 auto 0 calc(50% - 50vw); overflow: hidden; width: 50vw; }
 
-.front-page .mainVisual__slide__list__item.swiper-slide-active img { -webkit-animation-name: imgZoomUp; animation-name: imgZoomUp; -webkit-animation-duration: 10s; animation-duration: 10s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards; -webkit-animation-delay: 1s; animation-delay: 1s; }
+.c-background--window-left { margin: 0 calc(50% - 50vw) 0 auto; overflow: hidden; width: 50vw; }
 
-.front-page .mainVisual__slide { opacity: 0; -webkit-transform: translateX(24px); transform: translateX(24px); -webkit-transition: opacity 1.6s, -webkit-transform 1.6s; transition: opacity 1.6s, -webkit-transform 1.6s; transition: transform 1.6s, opacity 1.6s; transition: transform 1.6s, opacity 1.6s, -webkit-transform 1.6s; }
-
-.front-page .mainVisual__copy { opacity: 0; -webkit-transform: translateX(-24px); transform: translateX(-24px); -webkit-transition: opacity 1.6s, -webkit-transform 1.6s; transition: opacity 1.6s, -webkit-transform 1.6s; transition: transform 1.6s, opacity 1.6s; transition: transform 1.6s, opacity 1.6s, -webkit-transform 1.6s; -webkit-transition-delay: 0.8s; transition-delay: 0.8s; }
-
-@media screen and (max-width: 834px) { .front-page .mainVisual__copy { -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); } }
-
-.front-page .mainVisual__sub-text { opacity: 0; -webkit-transform: translate(24px, 150%); transform: translate(24px, 150%); -webkit-transition: opacity 1.6s, -webkit-transform 1.6s; transition: opacity 1.6s, -webkit-transform 1.6s; transition: transform 1.6s, opacity 1.6s; transition: transform 1.6s, opacity 1.6s, -webkit-transform 1.6s; -webkit-transition-delay: 0.8s; transition-delay: 0.8s; }
-
-.front-page .mainVisual__swiper-pagination { opacity: 0; -webkit-transition: opacity 1.6s; transition: opacity 1.6s; }
-
-.front-page .main { opacity: 0; -webkit-transform: translateY(24px); transform: translateY(24px); -webkit-transition: opacity 1.6s, -webkit-transform 1.6s; transition: opacity 1.6s, -webkit-transform 1.6s; transition: opacity 1.6s, transform 1.6s; transition: opacity 1.6s, transform 1.6s, -webkit-transform 1.6s; -webkit-transition-delay: 0.8s; transition-delay: 0.8s; }
-
-.front-page .anime__mvImg { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
-
-.front-page .anime__mvCopy { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
-
-@media screen and (max-width: 834px) { .front-page .anime__mvCopy { -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); } }
-
-.front-page .anime__mvSub-text { opacity: 1; -webkit-transform: translate(0, 150%); transform: translate(0, 150%); }
-
-.front-page .anime__main { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
-
-/*--------------------
- 下層ページのみ
---------------------*/
 /* ============================================
 // HEADER
 // ==========================================*/
@@ -815,17 +770,9 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 --------------------*/
 .footer__recruit { background-image: url(../img/common/footer_recruit.jpg); background-position: center; background-size: cover; background-repeat: no-repeat; padding: 80px; position: relative; }
 
-@media screen and (min-width: 835px) { .footer__recruit { background-attachment: fixed; } }
-
-@media all and (-ms-high-contrast: none) { .footer__recruit { background-attachment: local; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) { .footer__recruit { background-attachment: initial; } }
-
 @media screen and (max-width: 834px) { .footer__recruit { padding: 80px 24px; } }
 
 @media screen and (max-width: 320px) { .footer__recruit { padding: 80px 16px; } }
-
-.footer__recruit:before { content: ''; background-color: rgba(0, 0, 0, 0.5); position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
 
 .footer__recruit__inner { position: relative; z-index: 2; }
 
@@ -853,13 +800,13 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 .footer__body__corp { -webkit-box-flex: 0; -ms-flex: 0 0 27%; flex: 0 0 27%; margin-right: 3%; }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) { .footer__body__corp { -webkit-box-flex: 0; -ms-flex: 0 0 31%; flex: 0 0 31%; margin-right: 0; } }
+@media screen and (min-width: 768px) and (max-width: 1180px) { .footer__body__corp { -webkit-box-flex: 0; -ms-flex: 0 0 31%; flex: 0 0 31%; margin-right: 0; } }
 
 @media screen and (max-width: 834px) { .footer__body__corp { margin-right: 0; -webkit-box-ordinal-group: 3; -ms-flex-order: 2; order: 2; margin-top: 32px; } }
 
 .footer__body__links { -webkit-box-flex: 0; -ms-flex: 0 0 70%; flex: 0 0 70%; }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) { .footer__body__links { -webkit-box-flex: 0; -ms-flex: 0 0 66%; flex: 0 0 66%; margin-right: 0; } }
+@media screen and (min-width: 768px) and (max-width: 1180px) { .footer__body__links { -webkit-box-flex: 0; -ms-flex: 0 0 66%; flex: 0 0 66%; margin-right: 0; } }
 
 @media screen and (max-width: 834px) { .footer__body__links { -webkit-box-ordinal-group: 2; -ms-flex-order: 1; order: 1; } }
 
@@ -877,9 +824,13 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 @media screen and (max-width: 834px) { .footer__corpolate { width: 200px; } }
 
-.footer__tel { margin-top: 40px; }
+.footer__tel { margin-top: 40px; position: relative; padding-left: 48px; }
 
-@media screen and (max-width: 834px) { .footer__tel { margin-top: 20px; } }
+.footer__tel::before { content: ''; display: inline-block; background-image: url(../img/common/ico_tel.png); background-size: contain; background-repeat: no-repeat; width: 35px; height: 33px; position: absolute; top: 50%; left: 0; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
+
+@media screen and (max-width: 834px) { .footer__tel::before { -webkit-transform: translateY(-50%) scale(0.8); transform: translateY(-50%) scale(0.8); } }
+
+@media screen and (max-width: 834px) { .footer__tel { margin-top: 20px; padding-left: 40px; } }
 
 .footer__tel .tel-num { font-family: "Quicksand", serif; font-size: 2.8rem; font-weight: bold; color: #595652; line-height: 1; }
 
@@ -921,7 +872,7 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 .footer__copyright { padding: 60px 0; }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) { .footer__copyright { padding: 48px 0; } }
+@media screen and (min-width: 768px) and (max-width: 1180px) { .footer__copyright { padding: 48px 0; } }
 
 @media screen and (max-width: 834px) { .footer__copyright { padding: 40px 0 40px; -webkit-box-ordinal-group: 3; -ms-flex-order: 2; order: 2; } }
 
@@ -933,7 +884,7 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 .footer__copyright__ga { font-size: 1.2rem; }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) { .footer__copyright__ga { padding-right: 96px; } }
+@media screen and (min-width: 768px) and (max-width: 1180px) { .footer__copyright__ga { padding-right: 96px; } }
 
 .footer__copyright a { color: #595652; text-decoration: underline; }
 
@@ -960,7 +911,7 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 --------------------*/
 .pagetop { position: fixed; right: 40px; bottom: 40px; z-index: 20; opacity: 0; -webkit-transition: opacity 0.48s; transition: opacity 0.48s; }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) { .pagetop { right: 32px; bottom: 32px; } }
+@media screen and (min-width: 768px) and (max-width: 1180px) { .pagetop { right: 32px; bottom: 32px; } }
 
 @media screen and (max-width: 834px) { .pagetop { right: 12px; bottom: 12px; } }
 
@@ -1025,7 +976,7 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 .front-page .sec__jobSearch { background-image: url(../img/common/bg_illust01.png); background-position: bottom -12% right; background-repeat: no-repeat; }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) { .front-page .sec__jobSearch { background-size: auto 280px; background-position: bottom 0 right; } }
+@media screen and (min-width: 768px) and (max-width: 1180px) { .front-page .sec__jobSearch { background-size: auto 280px; background-position: bottom 0 right; } }
 
 @media screen and (max-width: 834px) { .front-page .sec__jobSearch { background-size: auto 180px; background-position: bottom 20% right; } }
 
@@ -1039,7 +990,7 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 .front-page .sec__others:before { content: ''; display: inline-block; background-image: url(../img/common/bg_illust02.png); background-size: contain; width: 487px; height: 382px; position: absolute; top: 0; left: 0; z-index: 2; -webkit-transform: translateY(-15%); transform: translateY(-15%); pointer-events: none; }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) { .front-page .sec__others:before { -webkit-transform: scale(0.8); transform: scale(0.8); -webkit-transform-origin: top left; transform-origin: top left; } }
+@media screen and (min-width: 768px) and (max-width: 1180px) { .front-page .sec__others:before { -webkit-transform: scale(0.8); transform: scale(0.8); -webkit-transform-origin: top left; transform-origin: top left; } }
 
 @media screen and (max-width: 834px) { .front-page .sec__others:before { -webkit-transform: scale(0.45); transform: scale(0.45); -webkit-transform-origin: top left; transform-origin: top left; top: -21px; } }
 
@@ -1049,7 +1000,7 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 .front-page .sec__interview .interview__img-holder::after { content: ''; display: inline-block; background-image: url(../img/common/bg_square01.png); width: 516px; height: 759px; position: absolute; top: 50%; right: 0; -webkit-transform: translateY(-50%); transform: translateY(-50%); z-index: -1; }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) { .front-page .sec__interview .interview__img-holder::after { width: 350px; height: 540px; } }
+@media screen and (min-width: 768px) and (max-width: 1180px) { .front-page .sec__interview .interview__img-holder::after { width: 350px; height: 540px; } }
 
 @media screen and (max-width: 834px) { .front-page .sec__interview .interview__img-holder::after { -webkit-transform-origin: top right; transform-origin: top right; right: -24px; width: 120px; height: 250px; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); } }
 
@@ -1061,7 +1012,7 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 .front-page .mainVisual__slide { -webkit-box-ordinal-group: 3; -ms-flex-order: 2; order: 2; padding-left: 200px; height: 590px; }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) { .front-page .mainVisual__slide { height: 486px; } }
+@media screen and (min-width: 768px) and (max-width: 1180px) { .front-page .mainVisual__slide { height: 486px; } }
 
 @media screen and (max-width: 834px) { .front-page .mainVisual__slide { padding-left: 40px; height: 345px; } }
 
@@ -1071,7 +1022,7 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 .front-page .mainVisual__copy { color: #f08a4b; font-size: 3.2rem; font-weight: bold; line-height: 1.8; position: absolute; top: 72px; left: 72px; z-index: 2; pointer-events: none; }
 
-@media screen and (max-width: 834px) { .front-page .mainVisual__copy { top: 50%; left: 50%; font-size: 2.0rem; white-space: nowrap; } }
+@media screen and (max-width: 834px) { .front-page .mainVisual__copy { top: auto; bottom: 8px; left: 56px; font-size: 2.0rem; white-space: nowrap; } }
 
 .front-page .mainVisual__copy .bold { font-size: 8.7rem; font-weight: bold; line-height: 1; display: inline-block; margin-right: 8px; }
 
@@ -1113,7 +1064,7 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 .front-page .sec__recruit { padding-top: 100px; padding-bottom: 112px; position: relative; background-color: #fff; }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) { .front-page .sec__recruit { padding-bottom: 80px; } }
+@media screen and (min-width: 768px) and (max-width: 1180px) { .front-page .sec__recruit { padding-bottom: 80px; } }
 
 @media screen and (max-width: 834px) { .front-page .sec__recruit { padding-top: 88px; padding-bottom: 32px; } }
 
@@ -1127,7 +1078,9 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 .front-page .sec__newJobs { -webkit-box-flex: 0; -ms-flex: 0 0 34%; flex: 0 0 34%; }
 
-.front-page .sec__newJobs .newJobs__list { margin-top: 48px; }
+.front-page .sec__newJobs .newJobs__list { margin-top: 48px; max-height: 400px; overflow-y: scroll; -ms-overflow-style: none; scrollbar-width: none; }
+
+.front-page .sec__newJobs .newJobs__list::-webkit-scrollbar { display: none; }
 
 @media screen and (max-width: 834px) { .front-page .sec__newJobs .newJobs__list { margin-top: 28px; } }
 
@@ -1155,7 +1108,7 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 .front-page .sec__facility { padding-top: 80px; padding-bottom: 200px; }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) { .front-page .sec__facility { padding-bottom: 120px; } }
+@media screen and (min-width: 768px) and (max-width: 1180px) { .front-page .sec__facility { padding-bottom: 120px; } }
 
 @media screen and (max-width: 834px) { .front-page .sec__facility { padding-top: 32px; padding-bottom: 56px; } }
 
@@ -1213,7 +1166,7 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 .front-page .sec__interview .interview__inner { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) { .front-page .sec__interview .interview__inner { padding-right: 0; } }
+@media screen and (min-width: 768px) and (max-width: 1180px) { .front-page .sec__interview .interview__inner { padding-right: 0; } }
 
 @media screen and (max-width: 834px) { .front-page .sec__interview .interview__inner { display: block; } }
 
@@ -1225,7 +1178,7 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 .front-page .sec__interview .interview__img-holder .img { width: 61.3vw; }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) { .front-page .sec__interview .interview__img-holder .img { margin-right: 0; margin-left: auto; } }
+@media screen and (min-width: 768px) and (max-width: 1180px) { .front-page .sec__interview .interview__img-holder .img { margin-right: 0; margin-left: auto; } }
 
 @media screen and (max-width: 834px) { .front-page .sec__interview .interview__img-holder .img { width: 90%; max-width: 460px; margin: 0 auto; } }
 
@@ -1241,7 +1194,7 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 .front-page .sec__others { padding-top: 190px; }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) { .front-page .sec__others { padding-top: 160px; } }
+@media screen and (min-width: 768px) and (max-width: 1180px) { .front-page .sec__others { padding-top: 160px; } }
 
 @media screen and (max-width: 834px) { .front-page .sec__others { padding-top: 80px; } }
 
@@ -1276,7 +1229,7 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 @media all and (-ms-high-contrast: none) { .front-page .circle { border: 1px solid; border-radius: 50%; } }
 
 /* ============================================
-// 求人フォーム
+// 求人フォーム 追加分
 // ==========================================*/
 .custom-form .custom-form_inner { margin-top: 36px; }
 
@@ -1332,13 +1285,15 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 @media screen and (max-width: 834px) { .custom-form input[type=checkbox] + label:after { top: 12px; left: 12px; } }
 
-.custom-form input[type=checkbox]:checked + label { background-color: #fff; border: 1px solid #eae408; }
+.custom-form input[type=checkbox]:checked + label { background-color: #fff; }
 
 .custom-form input[type=checkbox]:checked + label:before { background-color: #eae408; }
 
 .custom-form input[type=checkbox]:checked + label:after { top: 15px; left: 22px; width: 3px; height: 7px; }
 
 @media screen and (max-width: 834px) { .custom-form input[type=checkbox]:checked + label:after { top: 12px; left: 12px; } }
+
+.custom-form input[type=checkbox]:checked + label .border-yellow { position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: 1px solid #eae408; }
 
 .custom-form .-freeWord .form_parts_inner { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; margin-top: 8px; }
 
@@ -1362,7 +1317,7 @@ body .job_count_pager.contents_bottom .pagination .next a:after { content: ''; w
 
 .custom-form .-freeWord .form_parts_inner .custom-form_searth_btn .btn_cover::before { content: ''; display: inline-block; width: 15px; height: 15px; background-image: url(../img/common/ico_search_white.png); background-size: contain; background-repeat: no-repeat; position: absolute; top: 50%; left: 36px; -webkit-transform: translateY(-50%); transform: translateY(-50%); pointer-events: none; }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) { .custom-form .-freeWord .form_parts_inner .custom-form_searth_btn .btn_cover::before { left: 22px; } }
+@media screen and (min-width: 768px) and (max-width: 1180px) { .custom-form .-freeWord .form_parts_inner .custom-form_searth_btn .btn_cover::before { left: 22px; } }
 
 @media screen and (max-width: 834px) { .custom-form .-freeWord .form_parts_inner .custom-form_searth_btn .btn_cover::before { left: 108px; } }
 
