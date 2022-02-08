@@ -1,5 +1,11 @@
+@charset "utf-8";
+
+/* ============================================
+    FORM BASE STYLING
+// ==========================================*/
+
 /*------------------------------
-form base setting
+	base
 ------------------------------*/
 body.iPhone select,
 body.iPhone input,
@@ -8,7 +14,6 @@ body.iPhone textarea {
 }
 
 body{
-
 	input,
 	button,
 	textarea,
@@ -257,7 +262,7 @@ body{
 
 
 /*------------------------------
-	form custom setting
+	custom-form
 ------------------------------*/
 .custom-form{
 	&__parts{

@@ -1,7 +1,13 @@
+@charset "utf-8";
 
-// マスク
+/* ============================================
+  CCONPONENT BACKGROUND
+// ==========================================*/
+
+/*------------------------------
+  マスク
+------------------------------*/
 .c-background--mask {
-
 	&::before {
 		content: "";
 		position: absolute;
@@ -13,7 +19,10 @@
 	}
 }
 
-// 背景を固定
+
+/*------------------------------
+  固定
+------------------------------*/
 .c-background--fixed {
 	@include mq(pc) {
 		background-attachment: fixed;
@@ -26,20 +35,21 @@
 	}
 }
 
-// ウインドウ幅いっぱいに広げる
+
+/*------------------------------
+  ウインドウ幅いっぱいに広げる
+------------------------------*/
 .c-background--window-full {
 	margin: 0 calc(50% - 50vw);
 	padding: 0 calc(50vw - 50%);
 	overflow: hidden;
 	width: 100vw;
 }
-
 .c-background--window-right {
 	margin: 0 auto 0 calc(50% - 50vw);
 	overflow: hidden;
 	width: 50vw;
 }
-
 .c-background--window-left {
 	margin: 0 calc(50% - 50vw) 0 auto;
 	overflow: hidden;

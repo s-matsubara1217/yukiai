@@ -1,7 +1,23 @@
 @charset "UTF-8";
 /* ============================================
-// normalize.css v3.0.2 | MIT License | git.io/normalize
+  VARIABLES
 // ==========================================*/
+/*------------------------------
+  color set
+------------------------------*/
+/*------------------------------
+  font-family
+------------------------------*/
+/* ============================================
+	MIXINS
+// ==========================================*/
+/*------------------------------
+  break-points
+------------------------------*/
+/*------------------------------
+  アスペクト比固定
+------------------------------*/
+/* ============================================ normalize.css v3.0.2 | MIT License | git.io/normalize // ==========================================*/
 /** 1. Set default font family to sans-serif. 2. Prevent iOS text size adjust after orientation change, without disabling user zoom. */
 html { font-family: sans-serif; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
 
@@ -128,7 +144,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 td, th { padding: 0; }
 
 /* ============================================
-// 追加分
+	追加分
 // ==========================================*/
 body { position: relative; }
 
@@ -145,7 +161,7 @@ body:before { content: ''; display: inline-block; background-image: url(../img/c
 .l-main { position: relative; }
 
 /* ============================================
-// RESET
+	RESET
 // ==========================================*/
 * { -webkit-box-sizing: border-box; box-sizing: border-box; }
 
@@ -168,7 +184,7 @@ img { vertical-align: bottom; -webkit-backface-visibility: hidden; backface-visi
 @media (min-device-width: 769px) { a[href^="tel:"] { cursor: default; pointer-events: none; } }
 
 /* ============================================
-// BASE
+	BASE
 // ==========================================*/
 html, body { height: 100%; }
 
@@ -178,7 +194,6 @@ body { position: relative; min-width: 1024px; font-family: "Noto Sans JP", "游�
 
 @media screen and (max-width: 834px) { body { min-width: inherit; font-size: 1.4rem; line-height: 2; background-position: left -220px top 800px,right -220px top 120px; } }
 
-/* for IE11 + */
 #container { width: 100%; overflow: hidden; }
 
 @media (min-width: 768px) and (max-width: 1180px) { #container { position: static !important; -webkit-transform: none !important; transform: none !important; } }
@@ -199,7 +214,9 @@ a { color: #4f4844; -webkit-transition: opacity 0.24s, color 0.24s; transition: 
 
 @media screen and (min-width: 835px) { .btn:hover { opacity: 0.7; } }
 
-/* classes */
+/*------------------------------
+  classes
+------------------------------*/
 .ofi { -o-object-fit: cover; object-fit: cover; font-family: 'object-fit: cover;'; width: 100%; height: 100%; }
 
 @media screen and (min-width: 835px) { .ro:hover { opacity: 0.7; -webkit-transition: all 0.24s linear; transition: all 0.24s linear; } }
@@ -218,30 +235,15 @@ a { color: #4f4844; -webkit-transition: opacity 0.24s, color 0.24s; transition: 
 
 .pcCont { display: none; }
 
-/* fonts */
+/*------------------------------
+  fonts
+------------------------------*/
 .eng { font-family: "Quicksand", serif; }
 
 .mincho { font-family: "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif; }
 
-/* animations */
-.anime.-fadeIn { opacity: 0; -webkit-transition: opacity 0.8s ease; transition: opacity 0.8s ease; }
-
-.anime.-fadeIn.js-active, .js-active > .anime.-fadeIn { opacity: 1; }
-
-.anime.-fadeIn_bottom { opacity: 0; -webkit-transform: translateY(24px); transform: translateY(24px); -webkit-transition: opacity 0.8s ease,-webkit-transform 0.8s ease; transition: opacity 0.8s ease,-webkit-transform 0.8s ease; transition: opacity 0.8s ease,transform 0.8s ease; transition: opacity 0.8s ease,transform 0.8s ease,-webkit-transform 0.8s ease; }
-
-.anime.-fadeIn_bottom.js-active, .js-active > .anime.-fadeIn_bottom { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
-
-.anime.-fadeIn_fromRight { opacity: 0; -webkit-transform: translateX(24px); transform: translateX(24px); -webkit-transition: opacity 0.8s ease,-webkit-transform 0.8s ease; transition: opacity 0.8s ease,-webkit-transform 0.8s ease; transition: opacity 0.8s ease,transform 0.8s ease; transition: opacity 0.8s ease,transform 0.8s ease,-webkit-transform 0.8s ease; }
-
-.anime.-fadeIn_fromRight.js-active, .js-active > .anime.-fadeIn_fromRight { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
-
-.anime.-fadeIn_fromLeft { opacity: 0; -webkit-transform: translateX(-24px); transform: translateX(-24px); -webkit-transition: opacity 0.8s ease,-webkit-transform 0.8s ease; transition: opacity 0.8s ease,-webkit-transform 0.8s ease; transition: opacity 0.8s ease,transform 0.8s ease; transition: opacity 0.8s ease,transform 0.8s ease,-webkit-transform 0.8s ease; }
-
-.anime.-fadeIn_fromLeft.js-active, .js-active > .anime.-fadeIn_fromLeft { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
-
 /* ============================================
-// loading
+	loading
 // ==========================================*/
 #loading { display: none; }
 
@@ -288,7 +290,7 @@ a { color: #4f4844; -webkit-transition: opacity 0.24s, color 0.24s; transition: 
 .once #loading .loading__txt span:nth-child(15) { -webkit-animation-delay: 1.5s; animation-delay: 1.5s; }
 
 /* ============================================
-// hamburger
+	hamburger
 // ==========================================*/
 .hamburger { position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 1000; background: rgba(255, 255, 255, 0.9); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); opacity: 0; visibility: hidden; }
 
@@ -348,8 +350,37 @@ a { color: #4f4844; -webkit-transition: opacity 0.24s, color 0.24s; transition: 
 @media screen and (max-width: 834px) { .hamburger .commonBtn01 { margin-top: 24px; } }
 
 /* ============================================
-// keyframes
+    ANIMATION
 // ==========================================*/
+/*------------------------------
+  mixins
+------------------------------*/
+/*------------------------------
+  includes
+------------------------------*/
+.anime.-fadeIn { opacity: 0; -webkit-transition: opacity 0.8s ease; transition: opacity 0.8s ease; }
+
+.anime.-fadeIn.js-active, .js-active > .anime.-fadeIn { opacity: 1; }
+
+.anime.-fadeIn_top { opacity: 0; -webkit-transform: translateY(-40px); transform: translateY(-40px); -webkit-transition: opacity .3s ease,-webkit-transform .3s ease; transition: opacity .3s ease,-webkit-transform .3s ease; transition: opacity .3s ease,transform .3s ease; transition: opacity .3s ease,transform .3s ease,-webkit-transform .3s ease; }
+
+.anime.-fadeIn_top.js-active, .js-active > .anime.-fadeIn_top { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+
+.anime.-fadeIn_bottom { opacity: 0; -webkit-transform: translateY(24px); transform: translateY(24px); -webkit-transition: opacity 0.8s ease,-webkit-transform 0.8s ease; transition: opacity 0.8s ease,-webkit-transform 0.8s ease; transition: opacity 0.8s ease,transform 0.8s ease; transition: opacity 0.8s ease,transform 0.8s ease,-webkit-transform 0.8s ease; }
+
+.anime.-fadeIn_bottom.js-active, .js-active > .anime.-fadeIn_bottom { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+
+.anime.-fadeIn_fromRight { opacity: 0; -webkit-transform: translateX(24px); transform: translateX(24px); -webkit-transition: opacity 0.8s ease,-webkit-transform 0.8s ease; transition: opacity 0.8s ease,-webkit-transform 0.8s ease; transition: opacity 0.8s ease,transform 0.8s ease; transition: opacity 0.8s ease,transform 0.8s ease,-webkit-transform 0.8s ease; }
+
+.anime.-fadeIn_fromRight.js-active, .js-active > .anime.-fadeIn_fromRight { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
+
+.anime.-fadeIn_fromLeft { opacity: 0; -webkit-transform: translateX(-24px); transform: translateX(-24px); -webkit-transition: opacity 0.8s ease,-webkit-transform 0.8s ease; transition: opacity 0.8s ease,-webkit-transform 0.8s ease; transition: opacity 0.8s ease,transform 0.8s ease; transition: opacity 0.8s ease,transform 0.8s ease,-webkit-transform 0.8s ease; }
+
+.anime.-fadeIn_fromLeft.js-active, .js-active > .anime.-fadeIn_fromLeft { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
+
+/*------------------------------
+  keyframes
+------------------------------*/
 @-webkit-keyframes zoomOut { 0% { -webkit-transform: scale(1.15) rotate(0.00001deg); transform: scale(1.15) rotate(0.00001deg); }
   100% { -webkit-transform: scale(1) rotate(0.00001deg); transform: scale(1) rotate(0.00001deg); } }
 @keyframes zoomOut { 0% { -webkit-transform: scale(1.15) rotate(0.00001deg); transform: scale(1.15) rotate(0.00001deg); }
@@ -363,20 +394,9 @@ a { color: #4f4844; -webkit-transition: opacity 0.24s, color 0.24s; transition: 
   60% { -webkit-transform: translateY(-0.3em); transform: translateY(-0.3em); }
   100% { -webkit-transform: translateY(0em); transform: translateY(0em); } }
 
-.spOnly { display: none; }
-
-@media screen and (max-width: 834px) { .spOnly { display: block; } }
-
-.pcOnly { display: block; }
-
-@media screen and (max-width: 834px) { .pcOnly { display: none; } }
-
 /* ============================================
-// ANIMATION
+    追加分
 // ==========================================*/
-/*--------------------
- 全ページ共通
---------------------*/
 /*--------------------
  トップページのみ
 --------------------*/
@@ -410,11 +430,11 @@ a { color: #4f4844; -webkit-transition: opacity 0.24s, color 0.24s; transition: 
 
 .front-page .anime__main { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
 
-/*--------------------
- 下層ページのみ
---------------------*/
+/* ============================================
+    FORM BASE STYLING
+// ==========================================*/
 /*------------------------------
-form base setting
+	base
 ------------------------------*/
 body.iPhone select, body.iPhone input, body.iPhone textarea { font-size: 16px !important; }
 
@@ -485,7 +505,7 @@ body input[type=radio] + label a:link, body input[type=radio] + label a:visited 
 body input[type=radio]:checked + label:after { opacity: 1; }
 
 /*------------------------------
-	form custom setting
+	custom-form
 ------------------------------*/
 .custom-form__parts { font-size: 1.6rem; padding-top: 18px; padding-bottom: 20px; border-top: 1px solid #ebe7e5; }
 
@@ -535,7 +555,7 @@ body input[type=radio]:checked + label:after { opacity: 1; }
 @media screen and (max-width: 834px) { .custom-form .submitBtn input { font-size: 1.4rem !important; } }
 
 /* ============================================
-// MODULES
+	MODULES
 // ==========================================*/
 /*--------------------
 	pageHeader
@@ -694,7 +714,7 @@ body input[type=radio]:checked + label:after { opacity: 1; }
 .decoLeaf.-medium:before, .decoLeaf.-medium:after { width: 20px; height: 14px; border-radius: 12px 0 12px 0; }
 
 /* ============================================
-// UTILITY
+    UTILITY
 // ==========================================*/
 /*------------------------------
  表示 / 非表示
@@ -716,14 +736,18 @@ body input[type=radio]:checked + label:after { opacity: 1; }
 
 @media screen and (min-width: 835px) { .u-hover-bgDarkenPrimary:hover { background-color: #ec6b1c; } }
 
+/* ============================================ CCONPONENT BACKGROUND // ==========================================*/
+/*------------------------------ マスク ------------------------------*/
 .c-background--mask::before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: rgba(0, 0, 0, 0.5); }
 
+/*------------------------------ 固定 ------------------------------*/
 @media screen and (min-width: 835px) { .c-background--fixed { background-attachment: fixed; } }
 
 @media all and (-ms-high-contrast: none) { .c-background--fixed { background-attachment: local; } }
 
 @media screen and (min-width: 768px) and (max-width: 1180px) { .c-background--fixed { background-attachment: initial; } }
 
+/*------------------------------ ウインドウ幅いっぱいに広げる ------------------------------*/
 .c-background--window-full { margin: 0 calc(50% - 50vw); padding: 0 calc(50vw - 50%); overflow: hidden; width: 100vw; }
 
 .c-background--window-right { margin: 0 auto 0 calc(50% - 50vw); overflow: hidden; width: 50vw; }
@@ -731,7 +755,7 @@ body input[type=radio]:checked + label:after { opacity: 1; }
 .c-background--window-left { margin: 0 calc(50% - 50vw) 0 auto; overflow: hidden; width: 50vw; }
 
 /* ============================================
-// HEADER
+  HEADER
 // ==========================================*/
 /*--------------------
  ヘッダー
@@ -771,7 +795,7 @@ body input[type=radio]:checked + label:after { opacity: 1; }
 @media screen and (max-width: 834px) { .header__hamburger__inner > span { width: 18px; margin: 6px 0; } }
 
 /* ============================================
-// FOOTER
+	FOOTER
 // ==========================================*/
 /*--------------------
 	背景画像
@@ -937,7 +961,7 @@ body input[type=radio]:checked + label:after { opacity: 1; }
 @media screen and (max-width: 834px) { .pagetop img { -webkit-transform: scale(0.8); transform: scale(0.8); } }
 
 /* ============================================
-// INDEX
+	INDEX
 // ==========================================*/
 .front-page { /*--------------------
  ローディング
@@ -1238,7 +1262,7 @@ body input[type=radio]:checked + label:after { opacity: 1; }
 @media all and (-ms-high-contrast: none) { .front-page .circle { border: 1px solid; border-radius: 50%; } }
 
 /* ============================================
-// 求人フォーム 追加分
+    求人フォーム 追加分
 // ==========================================*/
 .custom-form .custom-form_inner { margin-top: 36px; }
 

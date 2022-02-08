@@ -1,14 +1,122 @@
 @charset "utf-8";
 
 /* ============================================
-// ANIMATION
+    ANIMATION
 // ==========================================*/
 
+/*------------------------------
+  mixins
+------------------------------*/
+//フェードイン
+@mixin fadeIn-ready{
+	opacity: 0;
+	transition: opacity 0.8s ease;
+}
+@mixin fadeIn-action{
+	opacity: 1;
+}
+//上からフェードイン
+@mixin fadeIn_top-ready{
+	opacity: 0;
+	transform: translateY(-40px);
+	transition: opacity .3s ease,transform .3s ease;
+}
+@mixin fadeIn_top-action{
+	opacity: 1;
+	transform: translateY(0);
+}
+//下からフェードイン
+@mixin fadeIn_bottom-ready{
+	opacity: 0;
+	transform: translateY(24px);
+	transition: opacity 0.8s ease,transform 0.8s ease;
+}
+@mixin fadeIn_bottom-action{
+	opacity: 1;
+	transform: translateY(0);
+}
+//右からフェードイン
+@mixin fadeIn_fromRight-ready{
+	opacity: 0;
+	transform: translateX(24px);
+	transition: opacity 0.8s ease,transform 0.8s ease;
+}
+@mixin fadeIn_fromRight-action{
+	opacity: 1;
+	transform: translateX(0);
+}
+//左からフェードイン
+@mixin fadeIn_fromLeft-ready{
+	opacity: 0;
+	transform: translateX(-24px);
+	transition: opacity 0.8s ease,transform 0.8s ease;
+}
+@mixin fadeIn_fromLeft-action{
+	opacity: 1;
+	transform: translateX(0);
+}
 
-/*--------------------
- 全ページ共通
---------------------*/
 
+/*------------------------------
+  includes
+------------------------------*/
+.anime{
+	&.-fadeIn{
+		@include fadeIn-ready;
+		&.js-active,
+		.js-active > &{
+			@include fadeIn-action;
+		}
+	}
+	&.-fadeIn_top{
+		@include fadeIn_top-ready;
+		&.js-active,
+		.js-active > &{
+			@include fadeIn_top-action;
+		}
+	}
+	&.-fadeIn_bottom{
+		@include fadeIn_bottom-ready;
+		&.js-active,
+		.js-active > &{
+			@include fadeIn_bottom-action;
+		}
+	}
+	&.-fadeIn_fromRight{
+		@include fadeIn_fromRight-ready;
+		&.js-active,
+		.js-active > &{
+			@include fadeIn_fromRight-action;
+		}
+	}
+	&.-fadeIn_fromLeft{
+		@include fadeIn_fromLeft-ready;
+		&.js-active,
+		.js-active > &{
+			@include fadeIn_fromLeft-action;
+		}
+	}
+}
+
+
+/*------------------------------
+  keyframes
+------------------------------*/
+@keyframes zoomOut{
+	0%{transform: scale(1.15) rotate(0.00001deg);}
+	100%{transform: scale(1) rotate(0.00001deg);}
+}
+@keyframes wave-text{
+	00%{transform: translateY(0em);}
+	60%{transform: translateY(-0.3em);}
+	100%{transform: translateY(0em);}
+}
+
+
+
+/* ============================================
+    追加分
+// ==========================================*/
 
 /*--------------------
  トップページのみ
@@ -98,8 +206,3 @@
         transform: translateY(0);
     }
 }
-
-
-/*--------------------
- 下層ページのみ
---------------------*/

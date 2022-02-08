@@ -1,8 +1,9 @@
 @charset "utf-8";
 
 /* ============================================
-// 追加分
+	追加分
 // ==========================================*/
+
 body {
 	// 背景画像（グラデーション）
 	position: relative;
@@ -38,7 +39,7 @@ body {
 
 
 /* ============================================
-// RESET
+	RESET
 // ==========================================*/
 
 *{-webkit-box-sizing: border-box;box-sizing: border-box;}
@@ -48,7 +49,6 @@ a{outline: none;text-decoration: none;}
 li{list-style: none;}
 img{vertical-align: bottom;-webkit-backface-visibility: hidden;backface-visibility: hidden;}
 .clearfix:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
-
 
 ::-moz-selection {
 		background: $primary-color;
@@ -67,9 +67,11 @@ img{vertical-align: bottom;-webkit-backface-visibility: hidden;backface-visibili
 	}
 }
 
+
 /* ============================================
-// BASE
+	BASE
 // ==========================================*/
+
 html,
 body{
 	height: 100%;
@@ -96,24 +98,16 @@ body{
 		background-position: left -220px top 800px,right -220px top 120px;
 	}
 }
-
-/* for IE11 + */
-// _:-ms-lang(x)::-ms-backdrop, body {
-// 	font-family: $default-family-ie;
-// }
-
 #container{
 	width: 100%;
 	overflow: hidden;
 }
-
 @media (min-width: 768px) and (max-width: 1180px){
 	#container {
 		position: static !important;
 		transform: none !important;
 	}
 }
-
 .innerWrap{
 	max-width: 1280px;
 	position: relative;
@@ -127,12 +121,10 @@ body{
 		padding: 0 18px;
 	}
 }
-
 main.main{
 	position: relative;
 	z-index: 2;
 }
-
 a{
 	color: $link-color;
 	transition: opacity 0.24s, color 0.24s;
@@ -142,7 +134,6 @@ a{
 		}
 	}
 }
-
 .btn {
 	transition: opacity 0.24s,color 0.24s;
 	@include mq(pc) {
@@ -152,7 +143,9 @@ a{
 	}
 }
 
-/* classes */
+/*------------------------------
+  classes
+------------------------------*/
 .ofi {-o-object-fit:cover;object-fit: cover;font-family:'object-fit: cover;';width: 100%;height: 100%;}
 .ro:hover{	@include mq(pc) {opacity: 0.7;transition: all 0.24s linear;}}
 .ro:hover img{opacity: 1;}
@@ -163,46 +156,15 @@ a{
 .spCont{display: block;}
 .pcCont{display: none;}
 
-
-/* fonts */
+/*------------------------------
+  fonts
+------------------------------*/
 .eng{font-family: $eng;}
 .mincho{font-family: $mincho;}
 
-/* animations */
-.anime{
-	&.-fadeIn{
-		@include fadeIn-ready;
-		&.js-active,
-		.js-active > &{
-			@include fadeIn-action;
-		}
-	}
-	&.-fadeIn_bottom{
-		@include fadeIn_bottom-ready;
-		&.js-active,
-		.js-active > &{
-			@include fadeIn_bottom-action;
-		}
-	}
-	&.-fadeIn_fromRight{
-		@include fadeIn_fromRight-ready;
-		&.js-active,
-		.js-active > &{
-			@include fadeIn_fromRight-action;
-		}
-	}
-	&.-fadeIn_fromLeft{
-		@include fadeIn_fromLeft-ready;
-		&.js-active,
-		.js-active > &{
-			@include fadeIn_fromLeft-action;
-		}
-	}
-
-}
 
 /* ============================================
-// loading
+	loading
 // ==========================================*/
 #loading{
 	display: none;
@@ -256,8 +218,9 @@ a{
 	}
 }
 
+
 /* ============================================
-// hamburger
+	hamburger
 // ==========================================*/
 .hamburger{
 	position: fixed;
@@ -401,35 +364,5 @@ a{
 		@include mq(sp) {
 			margin-top: 24px;
 		}
-	}
-}
-
-/* ============================================
-// keyframes
-// ==========================================*/
-@keyframes zoomOut{
-	0%{transform: scale(1.15) rotate(0.00001deg);}
-	100%{transform: scale(1) rotate(0.00001deg);}
-}
-
-@keyframes wave-text{
-	00%{transform: translateY(0em);}
-	60%{transform: translateY(-0.3em);}
-	100%{transform: translateY(0em);}
-}
-
-// SPのみ
-.spOnly {
-	display: none;
-	@include mq(sp) {
-		display: block;
-	}
-}
-
-// PCのみ
-.pcOnly {
-	display: block;
-	@include mq(sp) {
-		display: none;
 	}
 }

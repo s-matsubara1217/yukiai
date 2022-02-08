@@ -1,10 +1,12 @@
 @charset "utf-8";
 
-//========================================
-//variable - mixins
-//========================================
+/* ============================================
+  VARIABLES
+// ==========================================*/
 
-//color set
+/*------------------------------
+  color set
+------------------------------*/
 $primary-color: #f08a4b;
 $yellow: #eae408;
 $light-blue: #82becd;
@@ -15,19 +17,27 @@ $txt-color01: #4f4844;
 $txt-color02: #595652;
 $link-color: #4f4844;
 
-//font-family
+
+/*------------------------------
+  font-family
+------------------------------*/
 $default-family: "Noto Sans JP", "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
 $mincho: "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
 $eng: 'Quicksand', serif;
-
 $default-family-ie: "Noto Sans JP", "游ゴシック","メイリオ", Meiryo, sans-serif;
 $mincho-ie:  "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
-
 $font-awesome-free: 'Font Awesome 5 Free';
 $font-awesome-brands: 'Font Awesome 5 Brands';
 
 
-//break-points
+
+/* ============================================
+	MIXINS
+// ==========================================*/
+
+/*------------------------------
+  break-points
+------------------------------*/
 $breakpoints: (
   'pc': 'screen and (min-width: 835px)',
   'tab':'screen and (min-width:768px) and (max-width:1180px)',
@@ -41,13 +51,14 @@ $breakpoints: (
 		@content;
 	}
 }
-
 //▼使い方
 //@include mq(tab) {
 //  color: hoge;
 //}
 
-//アスペクト比固定
+/*------------------------------
+  アスペクト比固定
+------------------------------*/
 @mixin keepAspect($persentage){
 	position: relative;
 	z-index: 1;
@@ -63,58 +74,4 @@ $breakpoints: (
 		left: 0;
 		right: 0;
 	}
-}
-
-//ドロップシャドウ
-@mixin shadow{
-	box-shadow: 0 0 16px rgba(#000,0.1);
-}
-
-//フェードイン
-@mixin fadeIn-ready{
-	opacity: 0;
-	transition: opacity 0.8s ease;
-}
-@mixin fadeIn-action{
-	opacity: 1;
-}
-//上からフェードイン
-@mixin fadeIn_top-ready{
-	opacity: 0;
-	transform: translateY(-40px);
-	transition: opacity .3s ease,transform .3s ease;
-}
-@mixin fadeIn_top-action{
-	opacity: 1;
-	transform: translateY(0);
-}
-//下からフェードイン
-@mixin fadeIn_bottom-ready{
-	opacity: 0;
-	transform: translateY(24px);
-	transition: opacity 0.8s ease,transform 0.8s ease;
-}
-@mixin fadeIn_bottom-action{
-	opacity: 1;
-	transform: translateY(0);
-}
-//右からフェードイン
-@mixin fadeIn_fromRight-ready{
-	opacity: 0;
-	transform: translateX(24px);
-	transition: opacity 0.8s ease,transform 0.8s ease;
-}
-@mixin fadeIn_fromRight-action{
-	opacity: 1;
-	transform: translateX(0);
-}
-//左からフェードイン
-@mixin fadeIn_fromLeft-ready{
-	opacity: 0;
-	transform: translateX(-24px);
-	transition: opacity 0.8s ease,transform 0.8s ease;
-}
-@mixin fadeIn_fromLeft-action{
-	opacity: 1;
-	transform: translateX(0);
 }
