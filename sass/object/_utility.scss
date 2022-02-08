@@ -17,3 +17,30 @@
         display: none;
 	}
 }
+
+/*------------------------------
+ hover
+------------------------------*/
+// ズームアップ
+.u-hover-zoomUp {
+    overflow: hidden;
+    img {
+        transition: transform 0.4s;
+    }
+    @include mq(pc) {
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+// 背景色
+.u-hover-bgDarkenPrimary {
+    background-color: $primary-color;
+    transition: background 0.4s;
+    @include mq(pc) {
+        &:hover {
+            background-color: darken($primary-color,10);
+        }
+    }
+}

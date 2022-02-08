@@ -3,6 +3,25 @@
 /* ============================================
 // 追加分
 // ==========================================*/
+body {
+	// 背景画像（グラデーション）
+	position: relative;
+	&:before {
+		content: '';
+		display: inline-block;
+		background-image: url(../img/common/bg01.png);
+		background-repeat: no-repeat;
+		width: 698px;
+		height: 325px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		@include mq(sp) {
+		transform: scale(0.4);
+		transform-origin: top right;
+		}
+	}
+}
 #container {
 	padding-top: 150px;
 	background-color: $bg-color;
@@ -12,6 +31,9 @@
 	@include mq(sp) {
 		padding-top: 83px;
 	}
+}
+.l-main {
+	position: relative;
 }
 
 

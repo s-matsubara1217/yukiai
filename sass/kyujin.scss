@@ -10,11 +10,33 @@
 // mixins
 //========================================
 //color set
-$primary-color: #2b5ce0;
-$accent-color: #ff8000;
-$txt-color: #333333;
+$primary-color: #f08a4b;
+$accent-color: #f08a4b;
+$yellow: #eae408;
+$light-blue: #82becd;
+$light-green: #85b26f;
+$bg-color: #fef9f6;
+$border-color: #ebe7e5;
+$txt-color: #4f4844;
+$txt-color01: #4f4844;
+$txt-color02: #595652;
+$link-color: #4f4844;
+
 
 // Breakpoint
+$breakpoints: (
+  'pc': 'screen and (min-width: 835px)',
+  'tab':'screen and (min-width:768px) and (max-width:1180px)',
+  'sp': 'screen and (max-width: 834px)',
+  'narrow': 'screen and (max-width: 320px)',
+  "ie": "all and (-ms-high-contrast: none)",
+) !default;
+
+@mixin mq($breakpoint: pc) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
 // min-width
 $breakpoint-up: (
     'sm': 'screen and (min-width: 481px)',
@@ -39,12 +61,10 @@ $breakpoint-down: (
         @content;
     }
 }
-
 //animation speed
 @mixin transition($spd: .3s) {
     transition: all $spd;
 }
-
 //object fit image
 @mixin img-fit-contain() {
     font-family: 'object-fit: contain;';
@@ -150,7 +170,7 @@ parts
     user-select: none;
 	transition: .3s;
     &.btn_secondary {
-        background: lighten($primary-color , 15);
+        background: lighten($primary-color , 12);
         &:before {
             border-color: lighten($primary-color , 15);
         }
@@ -490,11 +510,6 @@ parts
     }
 
 
-    @media screen and (min-width: 769px) , only screen and (min-device-width : 769px) and (max-device-width : 1024px) and (orientation : landscape) {
-        a:hover {
-            opacity: .7;
-        }
-    }
 }
 
 
@@ -763,7 +778,6 @@ input[type=radio] {
     transform: translate(-50%, -50%);
     background: $primary-color;
     cursor: pointer;
-	transition: opacity .3s;
     max-width: 235px;
     width: 100%;
     margin-left: auto;
@@ -843,13 +857,6 @@ input[type=radio] {
         }
     }
 
-    //hover deskTop
-    @media screen and (min-width: 769px) , only screen and (min-device-width : 769px) and (max-device-width : 1024px) and (orientation : landscape) {
-        &:hover {
-            opacity: .7;
-        }
-    }
-
     @include mq-down(md)  {
         margin-bottom: 5%;
         // .toggle_txt {
@@ -881,145 +888,7 @@ input[type=radio] {
 	@include mq-down(sm) {
 		margin-bottom: 20px;
 	}
-    &_inner {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    &_parts {
-        display: flex;
-        align-items: center;
-        flex-basis: 100%;
-        padding: 20px 0;
-        border-bottom: 1px solid #eee;
-        &:first-child {
-            border-top: 1px solid #eee;
-        }
-    }
-    .parts_ttl {
-        flex: 0 0 200px;
-        font-size: 15px;
-        font-weight: bold;
-        &:before {
-            content: "";
-            position: relative;
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border: 3px solid $primary-color;
-            border-radius: 50%;
-            margin-right: .3em;
-        }
-        &_note {
-            font-size: 12px;
-            font-weight: bold;
-            color: $primary-color;
-        }
-    }
-    .form_parts_inner {
-        flex: 1 1 100%;
-        &_ttl {
-            font-weight: bold;
-            margin-bottom: .5em;
-            &:nth-of-type(2) {
-                margin-top: 15px;
-            }
-        }
-    }
-
-    .category_list {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        li {
-            margin: 2px 10px 2px 0;
-        }
-    }
-
-    .selCity-box {
-        background: #f7f7f7;
-        padding: .7em 15px;
-        .selCity_alert {
-            color: #f83434;
-            font-weight: bold;
-        }
-    }
-
-    .custom-form_searth_btn {
-        display: block;
-        max-width: 300px;
-        width: 100%;
-        margin: 30px auto 0;
-		@include mq-down(sm) {
-			margin-top: 20px;
-		}
-        .btn_cover {
-            display: block;
-            position: relative;
-            color: #fff;
-			font-size: 14px;
-			font-weight: bold;
-            @include transition(.2s);
-            &:before {
-				content: "";
-                display: block;
-                position: absolute;
-                z-index: 3;
-                top: 50%;
-                left: 1em;
-                transform: translateY(-50%);
-				width: 1em;
-				height: 1em;
-				background: url("../img/kyujin/ico_custom_lenz_white.png") no-repeat center center / contain;
-                pointer-events: none;
-				@include transition(.2s);
-            }
-            input {
-                position: relative;
-                z-index: 2;
-                width: 100%;
-                height: 100%;
-                text-align: center;
-                width: 100%;
-                height: 100%;
-                padding: 15px 0 !important;
-                background: $primary-color;
-                outline: none;
-                cursor: pointer;
-            }
-        }
-    }
-
-    //hover deskTop
-    @media screen and (min-width: 769px) , only screen and (min-device-width : 769px) and (max-device-width : 1024px) and (orientation : landscape) {
-        .custom-form_searth_btn {
-            .btn_cover {
-                &:hover {
-                    opacity: .7;
-                    &:before {
-                        left: 1em + .2em;
-                    }
-                }
-            }
-        }
-    }
-
-
-    @include mq-down(md)  {
-        .parts_ttl {
-            flex-basis: 150px;
-        }
-    }
-    @include mq-down(sm) {
-        &_parts {
-            display: block;
-        }
-        .parts_ttl {
-            flex-basis: 150px;
-            margin-bottom: .3em;
-        }
-    }
 }
-
 
 /* kyujin */
 .job_post_date {
@@ -1196,19 +1065,6 @@ input[type=radio] {
     font-weight: bold;
     color: $txt-color;
     padding: 0.8em 1em;
-    &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 0;
-        // background: $primary-color + #aaa;
-        background: lighten($primary-color , 43%);
-        width: 100%;
-        height: 100%;
-    }
-
 
     @include mq-down(sm) {
         font-size: 16px;
@@ -1225,21 +1081,6 @@ input[type=radio] {
     font-size: 18px;
     font-weight: bold;
     padding: 0.8em 1em;
-    &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 0;
-        //        background: spin($accent-color, 180);
-        background: lighten($accent-color, 45%);
-
-        width: 100%;
-        height: 100%;
-    }
-
-
     @include mq-down(sm) {
         font-size: 16px;
 //        padding-left: 0;
@@ -1338,7 +1179,6 @@ kyujin_l
         font-size: 20px;
 		a {
           color: $txt-color;
-			transition: opacity .3s;
         }
     }
 
@@ -1425,18 +1265,6 @@ kyujin_l
     }
 
 
-    @media screen and (min-width: 769px) , only screen and (min-device-width : 769px) and (max-device-width : 1024px) and (orientation : landscape) {
-        .job_head ,
-        .job_body_head_img ,
-		.job_ttl {
-            > a:hover {
-                opacity: .7;
-            }
-        }
-        // &:hover {
-            //            opacity: .6;
-        // }
-    }
 
     @include mq-down(sm) {
         .is_pc {
@@ -2044,42 +1872,9 @@ kyujin_d
     .convertion {
         flex: 1 0 auto;
         .btn_convertion {
-            position: relative;
-            display: block;
-            width: 100%;
-            background: $primary-color;
-            color: #fff;
-            padding: 15px 0;
-//            text-align: center;
-            text-decoration: none;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-            @include transition();
-            &:after {
-                content: "";
-                display: block;
-                position: absolute;
-                top: 3px;
-                right: 3px;
-                background: url("../img/kyujin/ico_custom_blank_white.png") no-repeat center top / contain;
-                width: 50px *0.2;
-                height: 35px *0.2;
-            }
             span {
                 font-size: 16px;
                 font-weight: bold;
-            }
-        }
-    }
-
-
-    @media screen and (min-width: 769px) , only screen and (min-device-width : 769px) and (max-device-width : 1024px) and (orientation : landscape) {
-        .convertion {
-            .btn_convertion {
-                &:hover {
-                    opacity: .7;
-                }
             }
         }
     }
@@ -2227,14 +2022,6 @@ whats new
         .job_txt_wrap_meta {
             margin-top: 5px;
         }
-    }
-
-
-    @media screen and (min-width: 769px) , only screen and (min-device-width : 769px) and (max-device-width : 1024px) and (orientation : landscape) {
-		.job_ttl a:hover ,
-		.job_img_wrap a:hover {
-			opacity: .7;
-		}
     }
 
     @include mq-down(md)  {

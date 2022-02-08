@@ -8,6 +8,7 @@
 	pageHeader
 --------------------*/
 .pageHeader{
+	position: relative;
 	background-color: lightgray;
 	&__ttl{
 		display: flex;
@@ -15,9 +16,10 @@
 		flex-direction: column;
 		color: #ffffff;
 		padding: 68px 40px;
+		text-align: center;
 		@include mq(sp) {
 			display: block;
-			padding: 24px 24px 20px;
+			padding: 36px 24px 36px;
 		}
 		.eng{
 		}
@@ -35,20 +37,20 @@
 	margin-bottom: 0;
 	z-index: 3;
 	&__list{
+		border-top: 1px solid $border-color;
 		position: relative;
 		overflow: auto;
 		white-space: nowrap;
 		box-sizing: border-box;
-		padding: 8px 116px;
-		text-align: right;
+		padding: 8px 40px;
 		@include mq(sp) {
 			padding: 8px 16px;
 		}
 		&__item{
 			display: inline;
-			font-size: 1.4rem;
-			font-weight: normal;
-			color: rgba(#666666, 0.3);
+			font-size: 1.2rem;
+			font-weight: 400;
+			color: $txt-color01;
 			@include mq(sp) {
 				font-size: 1.2rem;
 			}
@@ -63,7 +65,7 @@
 				display: inline-block;
 				position: relative;
 				transition: .3s;
-				color: rgba(#666666, 0.3);
+				color: $txt-color01;
 				@include mq(pc) {
 					&:hover{
 						color: $primary-color;
@@ -406,6 +408,14 @@
 			width: 14px;
 			height: 10px;
 			border-radius: 10px 0 10px 0;
+		}
+	}
+	&.-medium {
+		&:before,
+		&:after {
+			width: 20px;
+			height: 14px;
+			border-radius: 12px 0 12px 0;
 		}
 	}
 }

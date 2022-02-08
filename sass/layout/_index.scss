@@ -66,27 +66,9 @@
 	}
 }
 
-
 /*--------------------
  背景画像
 --------------------*/
-
-// 背景画像（グラデーション）
-&:before {
-    content: '';
-    display: inline-block;
-    background-image: url(../img/common/bg01.png);
-    background-repeat: no-repeat;
-    width: 698px;
-    height: 325px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    @include mq(sp) {
-      transform: scale(0.4);
-      transform-origin: top right;
-    }
-}
 // 背景画像（グラデーション）
 .main {
 	background-image: url(../img/common/bg04.png);
