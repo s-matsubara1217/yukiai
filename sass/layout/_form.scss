@@ -92,8 +92,17 @@
             pointer-events: none;
         }
     }
-    .btn_cover {
-
+    select {
+        background-color: #ebe7e5;
+        padding: 10px 16px !important;
+        @include mq(sp) {
+            padding: 8px 16px !important;
+        }
+    }
+    body.iPhone select {
+        @include mq(sp) {
+            font-size: 1.4rem !important;
+        }
     }
 
     // チェックボックス

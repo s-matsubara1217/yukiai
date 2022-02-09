@@ -135,6 +135,7 @@
 	&__address {
 		margin-top: 32px;
 		line-height: 1.2;
+		font-style: normal;
 		@include mq(sp) {
 			margin-top: 20px;
 		}

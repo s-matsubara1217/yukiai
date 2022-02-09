@@ -7,7 +7,6 @@
 /*------------------------------
 	base
 ------------------------------*/
-body.iPhone select,
 body.iPhone input,
 body.iPhone textarea {
 	font-size: 16px !important;
@@ -362,16 +361,16 @@ body{
 			pointer-events: none;
 		}
 	}
-  .check_box{
+	.check_box{
 		margin-top: -5px;
-    & > ul{
-      display: flex;
-      flex-wrap: wrap;
+	& > ul{
+		display: flex;
+		flex-wrap: wrap;
 			li{
 				margin-right: 1em;
 			}
-    }
-  }
+	}
+	}
 	.submitBtn{
 		position: relative;
     width: 120px;
@@ -401,4 +400,11 @@ body{
 			}
 		}
 	}
+	.selCity-box {
+        padding: .7em 0 0;
+        .selCity_alert {
+            color: #f83434;
+            font-weight: bold;
+        }
+    }
 }

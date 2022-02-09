@@ -436,7 +436,7 @@ a { color: #4f4844; -webkit-transition: opacity 0.24s, color 0.24s; transition: 
 /*------------------------------
 	base
 ------------------------------*/
-body.iPhone select, body.iPhone input, body.iPhone textarea { font-size: 16px !important; }
+body.iPhone input, body.iPhone textarea { font-size: 16px !important; }
 
 body input, body button, body textarea, body select { -moz-appearance: none; -ms-appearance: none; -webkit-appearance: none; appearance: none; text-indent: 0.01px; line-height: inherit; text-overflow: ''; }
 
@@ -554,6 +554,10 @@ body input[type=radio]:checked + label:after { opacity: 1; }
 
 @media screen and (max-width: 834px) { .custom-form .submitBtn input { font-size: 1.4rem !important; } }
 
+.custom-form .selCity-box { padding: .7em 0 0; }
+
+.custom-form .selCity-box .selCity_alert { color: #f83434; font-weight: bold; }
+
 /* ============================================
 	MODULES
 // ==========================================*/
@@ -585,7 +589,7 @@ body input[type=radio]:checked + label:after { opacity: 1; }
 
 @media screen and (min-width: 835px) { .breadcrumb__list__item a:hover { color: #f08a4b; } }
 
-.breadcrumb__list::-webkit-scrollbar { height: 1px; cursor: pointer; }
+.breadcrumb__list::-webkit-scrollbar { height: 5px; cursor: pointer; }
 
 .breadcrumb__list::-webkit-scrollbar-track { background: #e5e5e5; }
 
@@ -851,7 +855,7 @@ body input[type=radio]:checked + label:after { opacity: 1; }
 
 @media screen and (max-width: 834px) { .footer__logo img { width: 140px; } }
 
-.footer__address { margin-top: 32px; line-height: 1.2; }
+.footer__address { margin-top: 32px; line-height: 1.2; font-style: normal; }
 
 @media screen and (max-width: 834px) { .footer__address { margin-top: 20px; } }
 
@@ -1301,6 +1305,12 @@ body input[type=radio]:checked + label:after { opacity: 1; }
 .custom-form .pull-down { position: relative; }
 
 .custom-form .pull-down::after { content: ''; width: 6px; height: 6px; border: 0px; border-top: 2px solid #f08a4b; border-right: 2px solid #f08a4b; position: absolute; top: 50%; right: 20px; -webkit-transform: translateY(-50%) rotate(135deg); transform: translateY(-50%) rotate(135deg); pointer-events: none; }
+
+.custom-form select { background-color: #ebe7e5; padding: 10px 16px !important; }
+
+@media screen and (max-width: 834px) { .custom-form select { padding: 8px 16px !important; } }
+
+@media screen and (max-width: 834px) { .custom-form body.iPhone select { font-size: 1.4rem !important; } }
 
 .custom-form input[type=checkbox] + label { display: block; padding: 10px 20px; padding-left: 38px; font-size: 1.4rem; background-color: #ebe7e5; -webkit-transition: background 0.3s, border 0.3s; transition: background 0.3s, border 0.3s; }
 
