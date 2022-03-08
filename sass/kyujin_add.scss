@@ -8,6 +8,11 @@
 /*--------------------
 	共通
 --------------------*/
+.pageHeader {
+	.img {
+		background-image: url(../../img/kyujin/pageheader.png);
+	}
+}
 .l-main {
 	margin-top: 72px;
 	@include mq(sp) {
@@ -16,7 +21,7 @@
 }
 .job_ttl {
 	a {
-		transition: color 0.3s;
+		transition: all 0.3s !important;
 		@include mq(pc) {
 			&:hover {
 				opacity: 1;
@@ -109,6 +114,7 @@
 	求人情報（一覧）
 --------------------*/
 .lower-kyujin_l {
+	
 	.search_panel {
 		max-width: 1000px;
 		margin: 0 auto 48px;
@@ -188,6 +194,21 @@
 			margin-top: 8px;
 		}
 	}
+	.movieArea {
+		margin-top: 24px;
+		&__movie {
+				width: 100%;
+				position: relative;
+				@include keepAspect(56.27%);
+		}
+		iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+		}
+}
 	.outline_ttl,
 	.appeal_ttl {
 		padding-left: 36px;

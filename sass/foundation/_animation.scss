@@ -206,3 +206,30 @@
         transform: translateY(0);
     }
 }
+
+/*--------------------
+ pageHeader
+--------------------*/
+.pageHeader {
+    .title {
+        opacity: 0;
+		transform: translateX(-18px) translateY(-50%);
+        transition: transform 1.2s, opacity 1.2s;
+        transition-delay: 0.5s;
+    }
+    .img {
+        opacity: 0;
+        transform: translateX(24px);
+        transition: transform 1.2s, opacity 1.2s;
+    }
+}
+.js-loaded {
+    .title {
+        opacity: 1;
+        transform: translateX(0) translateY(-50%);
+    }
+    .img {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

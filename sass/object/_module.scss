@@ -8,23 +8,45 @@
 	pageHeader
 --------------------*/
 .pageHeader{
+	height: 400px;
 	position: relative;
-	background-color: lightgray;
-	&__ttl{
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		color: #ffffff;
-		padding: 68px 40px;
-		text-align: center;
-		@include mq(sp) {
-			display: block;
-			padding: 36px 24px 36px;
+	@include mq(sp) {
+		height: 200px;
+	}
+	.title {
+		color: $primary-color;
+		position: absolute;
+		top: 50%;
+		left: 7%;
+		z-index: 2;
+		.eng {
+			font-size: 7rem;
+			font-weight: bold;
+			line-height: 1.2;
+			@include mq(sp) {
+				font-size: 3.5rem;
+			}
 		}
-		.eng{
+		.ja {
+			font-size: 1.8rem;
+			font-weight: bold;
+			@include mq(sp) {
+				font-size: 1.4rem;
+			}
 		}
-		.ja{
-		}
+	}
+	.img {
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 86%;
+		margin-right: 0;
+		margin-left: auto;
 	}
 }
 
