@@ -23,102 +23,260 @@
 /*--------------------
 	共通
 --------------------*/
-.l-main { margin-top: 72px; }
+.l-main {
+  margin-top: 72px;
+}
 
-@media screen and (max-width: 834px) { .l-main { margin-top: 56px; } }
+@media screen and (max-width: 834px) {
+  .l-main {
+    margin-top: 56px;
+  }
+}
 
-.job_ttl a { -webkit-transition: color 0.3s; transition: color 0.3s; }
+.job_ttl a {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
 
-@media screen and (min-width: 835px) { .job_ttl a:hover { opacity: 1; color: #f08a4b; } }
+@media screen and (min-width: 835px) {
+  .job_ttl a:hover {
+    opacity: 1;
+    color: #f08a4b;
+  }
+}
 
-.job_count_pager .pagination li a { background: #dcdada; -webkit-transition: background 0.4s, color 0.4s; transition: background 0.4s, color 0.4s; }
+.job_count_pager .pagination li a {
+  background: #dcdada;
+  -webkit-transition: background 0.4s, color 0.4s;
+  transition: background 0.4s, color 0.4s;
+}
 
-@media screen and (min-width: 835px) { .job_count_pager .pagination li a:hover { background: #f08a4b; } }
+@media screen and (min-width: 835px) {
+  .job_count_pager .pagination li a:hover {
+    background: #f08a4b;
+  }
+}
 
-.job_count_pager.contents_top .pagination li { margin: 0 1px; }
+.job_count_pager.contents_top .pagination li {
+  margin: 0 1px;
+}
 
-.job_count_pager.contents_top .pagination li a { border-radius: 16px 0 16px 0; }
+.job_count_pager.contents_top .pagination li a {
+  border-radius: 16px 0 16px 0;
+}
 
-.job_count_pager.contents_top .pagination li em { border-radius: 16px 0 16px 0; }
+.job_count_pager.contents_top .pagination li em {
+  border-radius: 16px 0 16px 0;
+}
 
-.job_count_pager.contents_bottom { padding: 0; padding-top: 40px; }
+.job_count_pager.contents_bottom {
+  padding: 0;
+  padding-top: 40px;
+}
 
-.job_count_pager.contents_bottom .pagination li { margin: 0 2px; }
+.job_count_pager.contents_bottom .pagination li {
+  margin: 0 2px;
+}
 
-.job_count_pager.contents_bottom .pagination li a { border-radius: 24px 0 24px 0; }
+.job_count_pager.contents_bottom .pagination li a {
+  border-radius: 24px 0 24px 0;
+}
 
-.job_count_pager.contents_bottom .pagination li em { border-radius: 24px 0 24px 0; }
+.job_count_pager.contents_bottom .pagination li em {
+  border-radius: 24px 0 24px 0;
+}
 
-.btn { border-radius: 100px; }
+.btn {
+  border-radius: 100px;
+}
 
-@media screen and (min-width: 835px) { .btn:hover { opacity: 1; background: #ec6b1c; } }
+@media screen and (min-width: 835px) {
+  .btn:hover {
+    opacity: 1;
+    background: #ec6b1c;
+  }
+}
 
-.btn.btn_external:after { top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); right: 16px; }
+.btn.btn_external:after {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 16px;
+}
 
-@media screen and (min-width: 835px) { .btn.btn_secondary:hover { opacity: 1; background: #f08a4b; } }
+@media screen and (min-width: 835px) {
+  .btn.btn_secondary:hover {
+    opacity: 1;
+    background: #f08a4b;
+  }
+}
 
-.breadcrumb { margin-top: 80px; }
+.breadcrumb {
+  margin-top: 80px;
+}
 
-@media screen and (max-width: 834px) { .breadcrumb { margin-top: 48px; } }
+@media screen and (max-width: 834px) {
+  .breadcrumb {
+    margin-top: 48px;
+  }
+}
 
 /*--------------------
 	求人情報（一覧）
 --------------------*/
-.lower-kyujin_l .search_panel { max-width: 1000px; margin: 0 auto 48px; padding: 40px 50px 30px; background-color: #fff; }
+.lower-kyujin_l .search_panel {
+  max-width: 1000px;
+  margin: 0 auto 48px;
+  padding: 40px 50px 30px;
+  background-color: #fff;
+}
 
-@media screen and (max-width: 834px) { .lower-kyujin_l .search_panel { display: block; padding: 40px 24px 32px; margin-bottom: 32px; } }
+@media screen and (max-width: 834px) {
+  .lower-kyujin_l .search_panel {
+    display: block;
+    padding: 40px 24px 32px;
+    margin-bottom: 32px;
+  }
+}
 
-.lower-kyujin_l .search-toggle { border-radius: 100px; -webkit-transition: background 0.4s; transition: background 0.4s; }
+.lower-kyujin_l .search-toggle {
+  border-radius: 100px;
+  -webkit-transition: background 0.4s;
+  transition: background 0.4s;
+}
 
-@media screen and (min-width: 835px) { .lower-kyujin_l .search-toggle:hover { opacity: 1; background-color: #ec6b1c; } }
+@media screen and (min-width: 835px) {
+  .lower-kyujin_l .search-toggle:hover {
+    opacity: 1;
+    background-color: #ec6b1c;
+  }
+}
 
-.lower-kyujin_l .search-toggle .toggle_trigger { border-radius: 0 100px 100px 0; }
+.lower-kyujin_l .search-toggle .toggle_trigger {
+  border-radius: 0 100px 100px 0;
+}
 
-@media screen and (max-width: 834px) { .lower-kyujin_l .search-toggle .toggle_txt { font-size: 1.3rem; } }
+@media screen and (max-width: 834px) {
+  .lower-kyujin_l .search-toggle .toggle_txt {
+    font-size: 1.3rem;
+  }
+}
 
-@media screen and (max-width: 834px) { .lower-kyujin_l .job_result_total .job_result_total_body_ttl { font-size: 1.3rem; } }
+@media screen and (max-width: 834px) {
+  .lower-kyujin_l .job_result_total .job_result_total_body_ttl {
+    font-size: 1.3rem;
+  }
+}
 
-.lower-kyujin_l .job_body_head_img a .job_img { overflow: hidden; }
+.lower-kyujin_l .job_body_head_img a .job_img {
+  overflow: hidden;
+}
 
-.lower-kyujin_l .job_body_head_img a .job_img img { -webkit-transition: -webkit-transform 0.4s; transition: -webkit-transform 0.4s; transition: transform 0.4s; transition: transform 0.4s, -webkit-transform 0.4s; }
+.lower-kyujin_l .job_body_head_img a .job_img img {
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+}
 
-@media screen and (min-width: 835px) { .lower-kyujin_l .job_body_head_img a .job_img img:hover { -webkit-transform: scale(1.1); transform: scale(1.1); } }
+@media screen and (min-width: 835px) {
+  .lower-kyujin_l .job_body_head_img a .job_img img:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
 
-.lower-kyujin_l .custom-form .custom-form_inner { margin-top: 0; }
+.lower-kyujin_l .custom-form .custom-form_inner {
+  margin-top: 0;
+}
 
-@media screen and (max-width: 834px) { .lower-kyujin_l .custom-form .btn_cover::before { left: 88px !important; }
-  .lower-kyujin_l .custom-form .btn_cover input { font-size: 1.4rem !important; } }
+@media screen and (max-width: 834px) {
+  .lower-kyujin_l .custom-form .btn_cover::before {
+    left: 88px !important;
+  }
+  .lower-kyujin_l .custom-form .btn_cover input {
+    font-size: 1.4rem !important;
+  }
+}
 
 /*--------------------
 	求人情報（詳細）
 --------------------*/
-.lower-kyujin_d .l-main { margin-top: 36px; }
+.lower-kyujin_d .l-main {
+  margin-top: 36px;
+}
 
-@media screen and (max-width: 834px) { .lower-kyujin_d .l-main { margin-top: 8px; } }
+@media screen and (max-width: 834px) {
+  .lower-kyujin_d .l-main {
+    margin-top: 8px;
+  }
+}
 
-.lower-kyujin_d .outline_ttl, .lower-kyujin_d .appeal_ttl { padding-left: 36px; }
+.lower-kyujin_d .outline_ttl,
+.lower-kyujin_d .appeal_ttl {
+  padding-left: 36px;
+}
 
-@media screen and (max-width: 834px) { .lower-kyujin_d .outline_ttl, .lower-kyujin_d .appeal_ttl { padding-left: 28px; } }
+@media screen and (max-width: 834px) {
+  .lower-kyujin_d .outline_ttl,
+  .lower-kyujin_d .appeal_ttl {
+    padding-left: 28px;
+  }
+}
 
-.lower-kyujin_d .pagetop { bottom: calc(40px + 93px); }
+.lower-kyujin_d .pagetop {
+  bottom: calc(40px + 93px);
+}
 
-@media screen and (max-width: 834px) { .lower-kyujin_d .pagetop { bottom: calc(12px + 68px); } }
+@media screen and (max-width: 834px) {
+  .lower-kyujin_d .pagetop {
+    bottom: calc(12px + 68px);
+  }
+}
 
-@media screen and (max-width: 834px) { .lower-kyujin_d .breadcrumb { margin-top: 24px; } }
+@media screen and (max-width: 834px) {
+  .lower-kyujin_d .breadcrumb {
+    margin-top: 24px;
+  }
+}
 
-.lower-kyujin_d .footer { padding-bottom: 93px; }
+.lower-kyujin_d .footer {
+  padding-bottom: 93px;
+}
 
-@media screen and (max-width: 834px) { .lower-kyujin_d .footer { padding-bottom: 68px; } }
+@media screen and (max-width: 834px) {
+  .lower-kyujin_d .footer {
+    padding-bottom: 68px;
+  }
+}
 
 /*--------------------
 	新着求人情報
 --------------------*/
-@media screen and (max-width: 834px) { .lower-whatsnew .l-main { margin-top: 40px; } }
+@media screen and (max-width: 834px) {
+  .lower-whatsnew .l-main {
+    margin-top: 40px;
+  }
+}
 
-.lower-whatsnew .job_img_wrap a img { -webkit-transition: -webkit-transform 0.4s; transition: -webkit-transform 0.4s; transition: transform 0.4s; transition: transform 0.4s, -webkit-transform 0.4s; }
+.lower-whatsnew .job_img_wrap a img {
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+}
 
-.lower-whatsnew .job_img_wrap a .job_img { overflow: hidden; }
+.lower-whatsnew .job_img_wrap a .job_img {
+  overflow: hidden;
+}
 
-@media screen and (min-width: 835px) { .lower-whatsnew .job_img_wrap a:hover { opacity: 1; }
-  .lower-whatsnew .job_img_wrap a:hover img { -webkit-transform: scale(1.1); transform: scale(1.1); } }
+@media screen and (min-width: 835px) {
+  .lower-whatsnew .job_img_wrap a:hover {
+    opacity: 1;
+  }
+  .lower-whatsnew .job_img_wrap a:hover img {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
 /*# sourceMappingURL=kyujin_add.css.map */
